@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>adlo Order Workflow | GeoBoost R.</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode:"class",
+    theme:{
+      extend:{
+        colors:{
+          "tertiary-container":"#bfa974","surface-variant":"#e0e3e5","on-secondary-container":"#783c21",
+          "outline-variant":"#c4c6cd","inverse-surface":"#2d3133","inverse-primary":"#b9c7e0",
+          "surface-tint":"#515f74","primary-fixed-dim":"#b9c7e0","on-tertiary-container":"#4d3e12",
+          "on-primary-fixed":"#0d1c2f","primary-container":"#47556a","surface-container-lowest":"#ffffff",
+          "on-secondary-fixed":"#360f00","on-primary-fixed-variant":"#3a485c","background":"#f7f9fb",
+          "surface-container-high":"#e6e8ea","outline":"#75777d","on-background":"#191c1e",
+          "on-tertiary-fixed":"#241a00","on-surface-variant":"#44474c","on-surface":"#191c1e",
+          "on-secondary":"#ffffff","tertiary-fixed":"#f9e0a6","on-error":"#ffffff",
+          "inverse-on-surface":"#eff1f3","surface-container-highest":"#e0e3e5",
+          "on-tertiary-fixed-variant":"#554519","secondary-fixed-dim":"#ffb597","tertiary":"#6e5c2e",
+          "on-primary-container":"#bbcae2","on-error-container":"#93000a",
+          "surface-container-low":"#f2f4f6","surface-container":"#eceef0","surface-bright":"#f7f9fb",
+          "secondary":"#8d4d30","surface":"#f7f9fb","error":"#ba1a1a","tertiary-fixed-dim":"#dcc48d",
+          "on-tertiary":"#ffffff","secondary-fixed":"#ffdbcd","primary-fixed":"#d5e3fd",
+          "surface-dim":"#d8dadc","error-container":"#ffdad6","secondary-container":"#feaa87",
+          "on-secondary-fixed-variant":"#70361c","on-primary":"#ffffff","primary":"#303e52"
+        },
+        fontFamily:{"headline":["Manrope"],"body":["Inter"],"label":["Inter"]},
+        borderRadius:{"DEFAULT":"0.125rem","lg":"0.25rem","xl":"0.5rem","full":"0.75rem"},
+      },
+    },
+  }
+</script>
+<style>
+  .material-symbols-outlined{font-variation-settings:'FILL' 0,'wght' 300,'GRAD' 0,'opsz' 24;}
+</style>
+</head>
+<body class="bg-background text-on-surface font-body selection:bg-secondary-container selection:text-on-secondary-container">
+
+<!-- Version Badge -->
+<div class="fixed top-0 left-0 right-0 z-[100] bg-[#303e52] text-white text-center text-xs py-1.5 font-medium">
+  ⚠ 設計稿 — GeoBoost R. 接單流程版本 &nbsp;|&nbsp;
+  <a href="/directory.html" class="underline hover:no-underline">← 返回目錄</a>
+  &nbsp;|&nbsp;
+  <a href="/" class="underline hover:no-underline">查看最終版 →</a>
+</div>
+
+<!-- TopNavBar -->
+<nav class="bg-white/80 dark:bg-slate-900/80 backdrop-blur-md fixed top-7 w-full z-50 shadow-sm">
+  <div class="flex justify-between items-center px-8 py-4 max-w-7xl mx-auto">
+    <div class="text-xl font-bold tracking-tight text-[#00236f]">GeoBoost R.</div>
+    <div class="hidden md:flex items-center space-x-8">
+      <a class="text-slate-600 hover:text-[#00236f] transition-all duration-300" href="#">Services</a>
+      <a class="text-slate-600 hover:text-[#00236f] transition-all duration-300" href="#">Why Us</a>
+      <a class="text-slate-600 hover:text-[#00236f] transition-all duration-300" href="#">About</a>
+      <button class="bg-primary text-on-primary px-6 py-2 rounded-md font-semibold hover:bg-primary-container transition-all active:scale-95">Free Ad Audit</button>
+    </div>
+    <button class="md:hidden p-2 text-primary"><span class="material-symbols-outlined">menu</span></button>
+  </div>
+</nav>
+
+<main class="pt-32">
+  <!-- Hero Branding Section -->
+  <section class="px-8 py-20 max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-12">
+    <div class="flex-1 space-y-6">
+      <div class="inline-flex items-center gap-2 px-3 py-1 bg-tertiary-container text-on-tertiary-container rounded-full">
+        <span class="material-symbols-outlined text-[18px]">verified_user</span>
+        <span class="font-label text-xs uppercase tracking-widest font-bold">Global Taiwanese Merchant System</span>
+      </div>
+      <h1 class="font-headline text-5xl md:text-7xl font-extrabold text-primary tracking-tight leading-[1.1]">
+        adlo <span class="text-secondary">Order</span> Workflow.
+      </h1>
+      <p class="text-on-surface-variant text-lg md:text-xl max-w-xl leading-relaxed">
+        Experience the precision of the 'Digital Order Receipt' process. Five intelligent steps engineered for absolute operational transparency and speed.
+      </p>
+    </div>
+    <div class="flex-1 flex justify-center">
+      <div class="relative w-64 h-64 md:w-96 md:h-96 flex items-center justify-center">
+        <div class="absolute inset-0 bg-secondary/5 rounded-full blur-3xl"></div>
+        <div class="relative z-10 font-headline text-8xl md:text-[12rem] font-black text-primary/10 tracking-tighter select-none">adlo</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- The 5-Step Visual Guide -->
+  <section class="bg-surface-container-low py-24 px-8 overflow-hidden">
+    <div class="max-w-7xl mx-auto">
+      <div class="grid grid-cols-1 md:grid-cols-5 gap-4 relative">
+        <div class="hidden md:block absolute top-1/2 left-0 w-full h-px bg-outline-variant/30 -translate-y-1/2 z-0"></div>
+        <!-- Step 1 -->
+        <div class="group relative z-10 flex flex-col items-center text-center p-6 bg-surface-container-lowest rounded-xl shadow-sm hover:shadow-md transition-all duration-300 border border-outline-variant/10">
+          <div class="w-16 h-16 mb-6 rounded-full bg-surface-container flex items-center justify-center text-secondary group-hover:bg-secondary group-hover:text-on-secondary transition-colors duration-500">
+            <span class="material-symbols-outlined text-3xl">chat_bubble</span>
+          </div>
+          <span class="font-label text-[10px] text-outline font-bold uppercase tracking-widest mb-2">Step 01</span>
+          <h3 class="font-headline text-lg font-bold text-primary mb-3">Online Consultation</h3>
+          <p class="text-on-surface-variant text-sm leading-relaxed">Direct digital access to specialist advisors for initial requirements mapping.</p>
+        </div>
+        <!-- Step 2 -->
+        <div class="group relative z-10 flex flex-col items-center text-center p-6 bg-surface-container-lowest rounded-xl shadow-sm hover:shadow-md transition-all duration-300 border border-outline-variant/10 md:mt-12">
+          <div class="w-16 h-16 mb-6 rounded-full bg-surface-container flex items-center justify-center text-secondary group-hover:bg-secondary group-hover:text-on-secondary transition-colors duration-500">
+            <span class="material-symbols-outlined text-3xl">neurology</span>
+          </div>
+          <span class="font-label text-[10px] text-outline font-bold uppercase tracking-widest mb-2">Step 02</span>
+          <h3 class="font-headline text-lg font-bold text-primary mb-3">Intelligent Matching</h3>
+          <p class="text-on-surface-variant text-sm leading-relaxed">AI-driven selection of the optimal logistics and merchant pathing.</p>
+        </div>
+        <!-- Step 3 -->
+        <div class="group relative z-10 flex flex-col items-center text-center p-6 bg-surface-container-lowest rounded-xl shadow-sm hover:shadow-md transition-all duration-300 border border-outline-variant/10">
+          <div class="w-16 h-16 mb-6 rounded-full bg-surface-container flex items-center justify-center text-secondary group-hover:bg-secondary group-hover:text-on-secondary transition-colors duration-500">
+            <span class="material-symbols-outlined text-3xl">request_quote</span>
+          </div>
+          <span class="font-label text-[10px] text-outline font-bold uppercase tracking-widest mb-2">Step 03</span>
+          <h3 class="font-headline text-lg font-bold text-primary mb-3">Fast Quotation</h3>
+          <p class="text-on-surface-variant text-sm leading-relaxed">Dynamic pricing models generating competitive bids in real-time.</p>
+        </div>
+        <!-- Step 4 -->
+        <div class="group relative z-10 flex flex-col items-center text-center p-6 bg-surface-container-lowest rounded-xl shadow-sm hover:shadow-md transition-all duration-300 border border-outline-variant/10 md:mt-12">
+          <div class="w-16 h-16 mb-6 rounded-full bg-surface-container flex items-center justify-center text-secondary group-hover:bg-secondary group-hover:text-on-secondary transition-colors duration-500">
+            <span class="material-symbols-outlined text-3xl">calendar_today</span>
+          </div>
+          <span class="font-label text-[10px] text-outline font-bold uppercase tracking-widest mb-2">Step 04</span>
+          <h3 class="font-headline text-lg font-bold text-primary mb-3">Automated Scheduling</h3>
+          <p class="text-on-surface-variant text-sm leading-relaxed">Seamless integration with merchant timelines for instant slot allocation.</p>
+        </div>
+        <!-- Step 5 -->
+        <div class="group relative z-10 flex flex-col items-center text-center p-6 bg-surface-container-lowest rounded-xl shadow-sm hover:shadow-md transition-all duration-300 border border-outline-variant/10">
+          <div class="w-16 h-16 mb-6 rounded-full bg-surface-container flex items-center justify-center text-secondary group-hover:bg-secondary group-hover:text-on-secondary transition-colors duration-500">
+            <span class="material-symbols-outlined text-3xl">water_pump</span>
+          </div>
+          <span class="font-label text-[10px] text-outline font-bold uppercase tracking-widest mb-2">Step 05</span>
+          <h3 class="font-headline text-lg font-bold text-primary mb-3">Real-time Tracking</h3>
+          <p class="text-on-surface-variant text-sm leading-relaxed">End-to-end visibility of your order lifecycle with live status updates.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Asymmetric Detail Section -->
+  <section class="px-8 py-24 max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
+    <div class="md:col-span-7">
+      <div class="rounded-2xl overflow-hidden shadow-2xl">
+        <img alt="Digital Workflow Interface" class="w-full aspect-video object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD2iLy38purLpu4IO8NpSydcANj68Vi4bqnQChC5CsljZTfvRwciGRtvT8wpTVWEyPNqyEeegKpuVDGw7w50sotJD0_FifpNZ7-YUuMM1UoyUjVvGZ6NK3xtlrFtSL9YBHX9V3kn_coMiGjKRqjZnOpTHZoyAZpGI_xJi8qNSlskDakMAGYMneV8oYWIAPgF_7pJno43UmcWqpda92HZw7jL9K1zgHDNnhhJIckbsPxCSpNSnHpDLNgm0QZdvGjsSvUl9aFA_ynBQ"/>
+      </div>
+    </div>
+    <div class="md:col-span-5 flex flex-col gap-8">
+      <div class="space-y-4">
+        <h2 class="font-headline text-3xl font-extrabold text-primary leading-tight">Digital Order Receipt: The adlo Standard</h2>
+        <p class="text-on-surface-variant leading-relaxed">Our workflow isn't just a process; it's a commitment to the efficiency required by modern global commerce. Every digital touchpoint is logged and verified within the Global Taiwanese Merchant System.</p>
+      </div>
+      <div class="p-6 bg-surface-container-highest rounded-xl border-l-4 border-secondary">
+        <p class="italic text-primary font-medium">"adlo has reduced our quote-to-schedule time by over 65%, allowing our regional partners to scale without operational friction."</p>
+        <div class="mt-4 flex items-center gap-3">
+          <div class="w-10 h-10 rounded-full bg-primary/20 overflow-hidden">
+            <img alt="Executive" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDYjnWxf8UmnXvq7GUsm8Pw1hAIxkM-ojBVbiWOEqqPUW2aSknE7uOfWhO8xXb3Qvc9L89ptiU-yBd2jm6lxW7WF8PFbXhqycCVq_v1GqM1xmV43a5Ug6GvbadtM_v6Wb0scafIkGmaLgOlG6eQccbKfaMNwmMYy_hDirotZY4qfjTvJ1Nwk0AfTyOBYSHyILCNPgptb1Sy1MezcYrShB30JTxsUaHa9LHmjl-2Ij0lz6nw4SLGGx13aCSp1syY2JPLf_eivsa1Mg"/>
+          </div>
+          <span class="font-label text-xs font-bold text-primary">Regional Director, Precision Logistics</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Bento Grid -->
+  <section class="px-8 py-20 bg-primary text-on-primary">
+    <div class="max-w-7xl mx-auto">
+      <div class="mb-12 flex flex-col md:flex-row md:items-end justify-between gap-6">
+        <div class="max-w-xl">
+          <h2 class="font-headline text-4xl font-bold mb-4">Precision Ecosystem</h2>
+          <p class="text-primary-fixed-dim opacity-80">The backbone of our operation is a sophisticated network of high-performance modules.</p>
+        </div>
+        <button class="bg-secondary text-on-secondary px-8 py-3 rounded-md font-bold text-sm tracking-wide uppercase hover:bg-on-secondary-container transition-all">Explore Network</button>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+        <div class="md:col-span-2 p-8 bg-primary-container rounded-2xl flex flex-col justify-between aspect-square md:aspect-auto">
+          <span class="material-symbols-outlined text-5xl text-secondary">public</span>
+          <div>
+            <h4 class="font-headline text-2xl font-bold mb-2">Global Presence</h4>
+            <p class="text-on-primary-container text-sm">Managed oversight across 12 key international merchant hubs with unified reporting.</p>
+          </div>
+        </div>
+        <div class="p-8 bg-surface-container-highest/10 backdrop-blur-sm rounded-2xl border border-white/10 flex flex-col gap-4">
+          <span class="material-symbols-outlined text-secondary">verified</span>
+          <h4 class="font-headline text-xl font-bold">Trusted Verification</h4>
+          <p class="text-xs text-primary-fixed-dim leading-relaxed">ISO-certified digital receipts for every transaction stage.</p>
+        </div>
+        <div class="p-8 bg-surface-container-highest/10 backdrop-blur-sm rounded-2xl border border-white/10 flex flex-col gap-4">
+          <span class="material-symbols-outlined text-secondary">bolt</span>
+          <h4 class="font-headline text-xl font-bold">Rapid Response</h4>
+          <p class="text-xs text-primary-fixed-dim leading-relaxed">Sub-second quote generation using the adlo core engine.</p>
+        </div>
+        <div class="md:col-span-4 p-8 bg-tertiary-container text-on-tertiary-container rounded-2xl flex items-center justify-between">
+          <div class="flex items-center gap-6">
+            <span class="material-symbols-outlined text-4xl">inventory_2</span>
+            <div>
+              <h4 class="font-headline text-xl font-bold">Merchant Integration</h4>
+              <p class="text-sm opacity-80">Connect your existing ERP system directly to our order workflow.</p>
+            </div>
+          </div>
+          <span class="material-symbols-outlined hidden md:block">arrow_forward_ios</span>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- Footer -->
+<footer class="bg-[#f2f4f6] w-full py-12 px-8 mt-24">
+  <div class="flex flex-col md:flex-row justify-between items-center gap-6 max-w-7xl mx-auto">
+    <div class="text-lg font-bold text-[#00236f]">GeoBoost R.</div>
+    <a href="/directory.html" class="text-[#8d4d30] hover:underline text-sm font-medium">← 返回頁面目錄</a>
+    <div class="text-slate-500 font-label text-[10px] uppercase tracking-widest">© 2024 GeoBoost R. Regional Precision.</div>
+  </div>
+</footer>
+</body>
+</html>

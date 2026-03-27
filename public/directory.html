@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>adlo | 頁面目錄</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,FILL@0..1&display=swap" rel="stylesheet"/>
+<style>
+  body { font-family: 'Inter', sans-serif; }
+  .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; vertical-align: middle; }
+  .card-hover { transition: transform 0.2s ease, box-shadow 0.2s ease; }
+  .card-hover:hover { transform: translateY(-4px); box-shadow: 0 20px 40px -12px rgba(0,0,0,0.12); }
+  .tag-final    { background:#dcfce7; color:#166534; }
+  .tag-draft    { background:#fef3c7; color:#92400e; }
+  .tag-tool     { background:#dbeafe; color:#1d4ed8; }
+  .tag-en       { background:#f3e8ff; color:#6b21a8; }
+</style>
+</head>
+<body class="bg-slate-50 min-h-screen">
+
+<!-- Header -->
+<div class="bg-slate-900 text-white">
+  <div class="max-w-6xl mx-auto px-8 py-12">
+    <div class="flex items-end justify-between gap-6">
+      <div>
+        <div class="text-4xl font-extrabold tracking-tighter mb-2" style="font-family:'Playfair Display',serif;">adlo</div>
+        <h1 class="text-2xl font-bold text-slate-200 mb-2">頁面目錄 / Page Directory</h1>
+        <p class="text-slate-400 text-sm">所有設計稿與功能頁面的統一入口，點擊卡片即可開啟對應頁面。</p>
+      </div>
+      <div class="hidden md:flex flex-col items-end gap-2 text-xs text-slate-500">
+        <div id="serverStatus" class="flex items-center gap-2">
+          <span class="w-2 h-2 rounded-full bg-slate-500 inline-block" id="statusDot"></span>
+          <span id="statusText">檢查伺服器中...</span>
+        </div>
+        <div id="submissionCount" class="text-slate-400"></div>
+      </div>
+    </div>
+
+    <!-- Stats Bar -->
+    <div class="mt-8 grid grid-cols-2 sm:grid-cols-4 gap-4">
+      <div class="bg-slate-800 rounded-xl p-4">
+        <div class="text-slate-400 text-xs mb-1">設計稿頁面</div>
+        <div class="text-2xl font-bold text-white">3</div>
+      </div>
+      <div class="bg-slate-800 rounded-xl p-4">
+        <div class="text-slate-400 text-xs mb-1">功能工具</div>
+        <div class="text-2xl font-bold text-white">1</div>
+      </div>
+      <div class="bg-slate-800 rounded-xl p-4">
+        <div class="text-slate-400 text-xs mb-1">後端 API</div>
+        <div class="text-2xl font-bold text-amber-400">4</div>
+      </div>
+      <div class="bg-slate-800 rounded-xl p-4">
+        <div class="text-slate-400 text-xs mb-1">表單申請數</div>
+        <div class="text-2xl font-bold text-green-400" id="totalSubmissions">-</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Main Content -->
+<div class="max-w-6xl mx-auto px-8 py-12">
+
+  <!-- Section: 多頁式主站 (NEW) -->
+  <div class="mb-12">
+    <div class="flex items-center gap-3 mb-6">
+      <span class="material-symbols-outlined text-blue-600">hub</span>
+      <h2 class="text-lg font-bold text-slate-800">多頁式主站（改版後）</h2>
+      <span class="text-xs font-bold px-3 py-1 rounded-full bg-blue-100 text-blue-700">NEW</span>
+      <div class="flex-1 h-px bg-slate-200"></div>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mb-4">
+      <a href="/" class="card-hover block bg-white rounded-2xl border border-blue-100 shadow-sm overflow-hidden group">
+        <div class="h-2 bg-gradient-to-r from-blue-500 to-violet-500"></div>
+        <div class="p-5"><div class="text-2xl mb-2">🏠</div>
+          <h3 class="font-bold text-slate-800 group-hover:text-blue-600 transition-colors mb-1">首頁</h3>
+          <p class="text-slate-500 text-xs">Hero + 服務速覽 + 趨勢入口 + CTA</p>
+          <code class="text-xs text-slate-400 font-mono mt-3 block">index.html</code>
+        </div>
+      </a>
+      <a href="/services.html" class="card-hover block bg-white rounded-2xl border border-blue-100 shadow-sm overflow-hidden group">
+        <div class="h-2 bg-gradient-to-r from-blue-500 to-violet-500"></div>
+        <div class="p-5"><div class="text-2xl mb-2">🛠️</div>
+          <h3 class="font-bold text-slate-800 group-hover:text-blue-600 transition-colors mb-1">服務方案</h3>
+          <p class="text-slate-500 text-xs">痛點 + 四大模組 + 五大行業</p>
+          <code class="text-xs text-slate-400 font-mono mt-3 block">services.html</code>
+        </div>
+      </a>
+      <a href="/trends.html" class="card-hover block bg-white rounded-2xl border border-blue-100 shadow-sm overflow-hidden group">
+        <div class="h-2 bg-gradient-to-r from-blue-500 to-violet-500"></div>
+        <div class="p-5"><div class="text-2xl mb-2">📊</div>
+          <h3 class="font-bold text-slate-800 group-hover:text-blue-600 transition-colors mb-1">趨勢分析</h3>
+          <p class="text-slate-500 text-xs">Google Trends 台灣在地搜尋即時數據</p>
+          <code class="text-xs text-slate-400 font-mono mt-3 block">trends.html</code>
+        </div>
+      </a>
+      <a href="/process.html" class="card-hover block bg-white rounded-2xl border border-blue-100 shadow-sm overflow-hidden group">
+        <div class="h-2 bg-gradient-to-r from-blue-500 to-violet-500"></div>
+        <div class="p-5"><div class="text-2xl mb-2">🔄</div>
+          <h3 class="font-bold text-slate-800 group-hover:text-blue-600 transition-colors mb-1">接單流程</h3>
+          <p class="text-slate-500 text-xs">5 步驟流程 + 工廠實力 + 三大承諾</p>
+          <code class="text-xs text-slate-400 font-mono mt-3 block">process.html</code>
+        </div>
+      </a>
+      <a href="/contact.html" class="card-hover block bg-white rounded-2xl border border-blue-100 shadow-sm overflow-hidden group">
+        <div class="h-2 bg-gradient-to-r from-blue-500 to-violet-500"></div>
+        <div class="p-5"><div class="text-2xl mb-2">📬</div>
+          <h3 class="font-bold text-slate-800 group-hover:text-blue-600 transition-colors mb-1">立即諮詢</h3>
+          <p class="text-slate-500 text-xs">獨立表單頁，信任元素 + 後端整合</p>
+          <code class="text-xs text-slate-400 font-mono mt-3 block">contact.html</code>
+        </div>
+      </a>
+    </div>
+    <p class="text-xs text-slate-400">↑ 所有頁面共用 <code class="bg-slate-100 px-1.5 py-0.5 rounded">/js/nav.js</code> 漢堡選單，桌面版固定導覽列，行動版抽屜選單</p>
+  </div>
+
+  <!-- Section: 主要設計稿 -->
+  <div class="mb-12">
+    <div class="flex items-center gap-3 mb-6">
+      <span class="material-symbols-outlined text-slate-700">web</span>
+      <h2 class="text-lg font-bold text-slate-800">舊版設計稿（供參考）</h2>
+      <div class="flex-1 h-px bg-slate-200"></div>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+      <!-- adlo 最終版 -->
+      <a href="/" class="card-hover block bg-white rounded-2xl border border-slate-100 shadow-sm overflow-hidden group">
+        <div class="h-3 bg-gradient-to-r from-amber-700 to-amber-500"></div>
+        <div class="p-6">
+          <div class="flex items-start justify-between mb-4">
+            <div>
+              <div class="flex items-center gap-2 mb-2">
+                <span class="text-xs font-bold px-2 py-0.5 rounded-full tag-final">✓ 最終版</span>
+                <span class="text-xs font-bold px-2 py-0.5 rounded-full bg-slate-100 text-slate-600">含後端整合</span>
+              </div>
+              <h3 class="text-lg font-bold text-slate-800 group-hover:text-amber-700 transition-colors">adlo 主站</h3>
+              <p class="text-slate-500 text-sm mt-1">區域精準行銷 Landing Page</p>
+            </div>
+            <span class="material-symbols-outlined text-slate-300 group-hover:text-amber-500 transition-colors">arrow_outward</span>
+          </div>
+          <div class="space-y-1.5 text-xs text-slate-500">
+            <div class="flex items-center gap-2"><span class="material-symbols-outlined text-[14px] text-green-500">check_circle</span>Hero + 痛點 + 台灣市場方案</div>
+            <div class="flex items-center gap-2"><span class="material-symbols-outlined text-[14px] text-green-500">check_circle</span>服務卡片（白色懸浮版）</div>
+            <div class="flex items-center gap-2"><span class="material-symbols-outlined text-[14px] text-green-500">check_circle</span>工廠實力 + 接單流程</div>
+            <div class="flex items-center gap-2"><span class="material-symbols-outlined text-[14px] text-green-500">check_circle</span>表單 → API → 儲存至 JSON</div>
+          </div>
+          <div class="mt-4 pt-4 border-t border-slate-50 flex items-center justify-between">
+            <code class="text-xs text-slate-400 font-mono">index.html</code>
+            <span class="text-xs text-amber-700 font-semibold">點擊開啟 →</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- adlo v1 深色服務欄 -->
+      <a href="/adlo-v1.html" class="card-hover block bg-white rounded-2xl border border-slate-100 shadow-sm overflow-hidden group">
+        <div class="h-3 bg-gradient-to-r from-slate-700 to-slate-500"></div>
+        <div class="p-6">
+          <div class="flex items-start justify-between mb-4">
+            <div>
+              <div class="flex items-center gap-2 mb-2">
+                <span class="text-xs font-bold px-2 py-0.5 rounded-full tag-draft">設計稿 v1</span>
+                <span class="text-xs font-bold px-2 py-0.5 rounded-full bg-slate-100 text-slate-600">含後端整合</span>
+              </div>
+              <h3 class="text-lg font-bold text-slate-800 group-hover:text-slate-600 transition-colors">adlo v1 — 深色服務欄</h3>
+              <p class="text-slate-500 text-sm mt-1">早期版本，三欄深色橫排服務區塊</p>
+            </div>
+            <span class="material-symbols-outlined text-slate-300 group-hover:text-slate-500 transition-colors">arrow_outward</span>
+          </div>
+          <div class="space-y-1.5 text-xs text-slate-500">
+            <div class="flex items-center gap-2"><span class="material-symbols-outlined text-[14px] text-amber-500">radio_button_unchecked</span>Hero + 痛點（同最終版）</div>
+            <div class="flex items-center gap-2"><span class="material-symbols-outlined text-[14px] text-amber-500">radio_button_unchecked</span>服務區塊：深色 bg-slate-700 橫排</div>
+            <div class="flex items-center gap-2"><span class="material-symbols-outlined text-[14px] text-amber-500">radio_button_unchecked</span>工廠實力 + 接單流程</div>
+            <div class="flex items-center gap-2"><span class="material-symbols-outlined text-[14px] text-green-500">check_circle</span>表單 → API（共用後端）</div>
+          </div>
+          <div class="mt-4 pt-4 border-t border-slate-50 flex items-center justify-between">
+            <code class="text-xs text-slate-400 font-mono">adlo-v1.html</code>
+            <span class="text-xs text-slate-600 font-semibold">點擊開啟 →</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- GeoBoost R. -->
+      <a href="/geoboost.html" class="card-hover block bg-white rounded-2xl border border-slate-100 shadow-sm overflow-hidden group">
+        <div class="h-3 bg-gradient-to-r from-[#303e52] to-[#8d4d30]"></div>
+        <div class="p-6">
+          <div class="flex items-start justify-between mb-4">
+            <div>
+              <div class="flex items-center gap-2 mb-2">
+                <span class="text-xs font-bold px-2 py-0.5 rounded-full tag-en">English / 接單頁</span>
+              </div>
+              <h3 class="text-lg font-bold text-slate-800 group-hover:text-[#303e52] transition-colors">GeoBoost R. — Order Workflow</h3>
+              <p class="text-slate-500 text-sm mt-1">英文版接單流程，獨立品牌設計語言</p>
+            </div>
+            <span class="material-symbols-outlined text-slate-300 group-hover:text-[#8d4d30] transition-colors">arrow_outward</span>
+          </div>
+          <div class="space-y-1.5 text-xs text-slate-500">
+            <div class="flex items-center gap-2"><span class="material-symbols-outlined text-[14px] text-purple-500">circle</span>Hero 大字標題 + 品牌識別</div>
+            <div class="flex items-center gap-2"><span class="material-symbols-outlined text-[14px] text-purple-500">circle</span>5 步驟波浪排列視覺流程</div>
+            <div class="flex items-center gap-2"><span class="material-symbols-outlined text-[14px] text-purple-500">circle</span>非對稱圖文區 + 客戶引言</div>
+            <div class="flex items-center gap-2"><span class="material-symbols-outlined text-[14px] text-purple-500">circle</span>Bento Grid 生態系模組</div>
+          </div>
+          <div class="mt-4 pt-4 border-t border-slate-50 flex items-center justify-between">
+            <code class="text-xs text-slate-400 font-mono">geoboost.html</code>
+            <span class="text-xs text-[#303e52] font-semibold">點擊開啟 →</span>
+          </div>
+        </div>
+      </a>
+
+    </div>
+  </div>
+
+  <!-- Section: 功能工具 -->
+  <div class="mb-12">
+    <div class="flex items-center gap-3 mb-6">
+      <span class="material-symbols-outlined text-slate-700">build</span>
+      <h2 class="text-lg font-bold text-slate-800">功能工具</h2>
+      <div class="flex-1 h-px bg-slate-200"></div>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+      <!-- Admin -->
+      <a href="/admin.html" class="card-hover block bg-white rounded-2xl border border-slate-100 shadow-sm overflow-hidden group">
+        <div class="h-3 bg-gradient-to-r from-blue-700 to-blue-500"></div>
+        <div class="p-6">
+          <div class="flex items-start justify-between mb-4">
+            <div>
+              <div class="flex items-center gap-2 mb-2">
+                <span class="text-xs font-bold px-2 py-0.5 rounded-full tag-tool">管理工具</span>
+                <span id="newBadge" class="hidden text-xs font-bold px-2 py-0.5 rounded-full bg-red-100 text-red-700"></span>
+              </div>
+              <h3 class="text-lg font-bold text-slate-800 group-hover:text-blue-700 transition-colors">管理後台</h3>
+              <p class="text-slate-500 text-sm mt-1">查看、追蹤、管理所有表單申請記錄</p>
+            </div>
+            <span class="material-symbols-outlined text-slate-300 group-hover:text-blue-500 transition-colors">arrow_outward</span>
+          </div>
+          <div class="space-y-1.5 text-xs text-slate-500">
+            <div class="flex items-center gap-2"><span class="material-symbols-outlined text-[14px] text-green-500">check_circle</span>統計卡片（全部 / 新申請 / 已聯繫 / 完成）</div>
+            <div class="flex items-center gap-2"><span class="material-symbols-outlined text-[14px] text-green-500">check_circle</span>即時搜尋 + 狀態篩選</div>
+            <div class="flex items-center gap-2"><span class="material-symbols-outlined text-[14px] text-green-500">check_circle</span>點擊查看詳情 Modal</div>
+            <div class="flex items-center gap-2"><span class="material-symbols-outlined text-[14px] text-green-500">check_circle</span>狀態更新 / 刪除記錄 / 30s 自動刷新</div>
+          </div>
+          <div class="mt-4 pt-4 border-t border-slate-50 flex items-center justify-between">
+            <code class="text-xs text-slate-400 font-mono">admin.html</code>
+            <span class="text-xs text-blue-700 font-semibold">點擊開啟 →</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- API Docs -->
+      <div class="bg-white rounded-2xl border border-slate-100 shadow-sm overflow-hidden">
+        <div class="h-3 bg-gradient-to-r from-slate-400 to-slate-300"></div>
+        <div class="p-6">
+          <div class="flex items-center gap-2 mb-2">
+            <span class="text-xs font-bold px-2 py-0.5 rounded-full bg-slate-100 text-slate-600">後端 API</span>
+          </div>
+          <h3 class="text-lg font-bold text-slate-800 mb-1">API 端點一覽</h3>
+          <p class="text-slate-500 text-sm mb-4">Express 後端 · port 3000</p>
+          <div class="space-y-3">
+            <div class="flex items-center gap-3 p-3 bg-green-50 rounded-lg">
+              <span class="text-[10px] font-black text-green-700 bg-green-200 px-2 py-0.5 rounded font-mono w-12 text-center">POST</span>
+              <code class="text-xs text-slate-700 font-mono">/api/contact</code>
+              <span class="text-xs text-slate-500 ml-auto">送出表單</span>
+            </div>
+            <div class="flex items-center gap-3 p-3 bg-blue-50 rounded-lg">
+              <span class="text-[10px] font-black text-blue-700 bg-blue-200 px-2 py-0.5 rounded font-mono w-12 text-center">GET</span>
+              <code class="text-xs text-slate-700 font-mono">/api/submissions</code>
+              <span class="text-xs text-slate-500 ml-auto">讀取全部</span>
+            </div>
+            <div class="flex items-center gap-3 p-3 bg-amber-50 rounded-lg">
+              <span class="text-[10px] font-black text-amber-700 bg-amber-200 px-2 py-0.5 rounded font-mono w-12 text-center">PATCH</span>
+              <code class="text-xs text-slate-700 font-mono">/api/submissions/:id/status</code>
+              <span class="text-xs text-slate-500 ml-auto">更新狀態</span>
+            </div>
+            <div class="flex items-center gap-3 p-3 bg-red-50 rounded-lg">
+              <span class="text-[10px] font-black text-red-700 bg-red-200 px-2 py-0.5 rounded font-mono w-12 text-center">DELETE</span>
+              <code class="text-xs text-slate-700 font-mono">/api/submissions/:id</code>
+              <span class="text-xs text-slate-500 ml-auto">刪除記錄</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Section: 差異比較 -->
+  <div class="mb-12">
+    <div class="flex items-center gap-3 mb-6">
+      <span class="material-symbols-outlined text-slate-700">compare</span>
+      <h2 class="text-lg font-bold text-slate-800">設計版本差異比較</h2>
+      <div class="flex-1 h-px bg-slate-200"></div>
+    </div>
+    <div class="bg-white rounded-2xl border border-slate-100 shadow-sm overflow-hidden">
+      <table class="w-full text-sm">
+        <thead>
+          <tr class="bg-slate-50 border-b border-slate-100">
+            <th class="text-left px-6 py-4 font-semibold text-slate-600 text-xs uppercase tracking-wide">功能 / 區塊</th>
+            <th class="text-center px-4 py-4 font-semibold text-amber-700 text-xs uppercase tracking-wide">主站（最終版）</th>
+            <th class="text-center px-4 py-4 font-semibold text-slate-600 text-xs uppercase tracking-wide">adlo v1</th>
+            <th class="text-center px-4 py-4 font-semibold text-[#303e52] text-xs uppercase tracking-wide">GeoBoost R.</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-slate-50 text-xs">
+          <tr class="hover:bg-slate-50/50">
+            <td class="px-6 py-3 font-medium text-slate-700">語言</td>
+            <td class="text-center px-4 py-3 text-slate-600">繁體中文</td>
+            <td class="text-center px-4 py-3 text-slate-600">繁體中文</td>
+            <td class="text-center px-4 py-3 text-slate-600">English</td>
+          </tr>
+          <tr class="hover:bg-slate-50/50">
+            <td class="px-6 py-3 font-medium text-slate-700">服務區塊設計</td>
+            <td class="text-center px-4 py-3"><span class="text-green-600 font-medium">白色懸浮卡片</span></td>
+            <td class="text-center px-4 py-3"><span class="text-slate-600 font-medium">深色三欄橫排</span></td>
+            <td class="text-center px-4 py-3 text-slate-400">—</td>
+          </tr>
+          <tr class="hover:bg-slate-50/50">
+            <td class="px-6 py-3 font-medium text-slate-700">台灣市場方案區塊</td>
+            <td class="text-center px-4 py-3"><span class="material-symbols-outlined text-green-500 text-base">check</span></td>
+            <td class="text-center px-4 py-3"><span class="material-symbols-outlined text-slate-300 text-base">close</span></td>
+            <td class="text-center px-4 py-3"><span class="material-symbols-outlined text-slate-300 text-base">close</span></td>
+          </tr>
+          <tr class="hover:bg-slate-50/50">
+            <td class="px-6 py-3 font-medium text-slate-700">接單流程（5步驟）</td>
+            <td class="text-center px-4 py-3"><span class="material-symbols-outlined text-green-500 text-base">check</span></td>
+            <td class="text-center px-4 py-3"><span class="material-symbols-outlined text-green-500 text-base">check</span></td>
+            <td class="text-center px-4 py-3"><span class="material-symbols-outlined text-green-500 text-base">check</span></td>
+          </tr>
+          <tr class="hover:bg-slate-50/50">
+            <td class="px-6 py-3 font-medium text-slate-700">聯絡表單 + 後端儲存</td>
+            <td class="text-center px-4 py-3"><span class="material-symbols-outlined text-green-500 text-base">check</span></td>
+            <td class="text-center px-4 py-3"><span class="material-symbols-outlined text-green-500 text-base">check</span></td>
+            <td class="text-center px-4 py-3"><span class="material-symbols-outlined text-slate-300 text-base">close</span></td>
+          </tr>
+          <tr class="hover:bg-slate-50/50">
+            <td class="px-6 py-3 font-medium text-slate-700">Bento Grid 模組</td>
+            <td class="text-center px-4 py-3"><span class="material-symbols-outlined text-slate-300 text-base">close</span></td>
+            <td class="text-center px-4 py-3"><span class="material-symbols-outlined text-slate-300 text-base">close</span></td>
+            <td class="text-center px-4 py-3"><span class="material-symbols-outlined text-green-500 text-base">check</span></td>
+          </tr>
+          <tr class="hover:bg-slate-50/50">
+            <td class="px-6 py-3 font-medium text-slate-700">品牌識別</td>
+            <td class="text-center px-4 py-3 text-amber-700 font-medium">adlo（暖棕）</td>
+            <td class="text-center px-4 py-3 text-slate-600 font-medium">adlo（暖棕）</td>
+            <td class="text-center px-4 py-3 text-[#303e52] font-medium">GeoBoost R.（深藍）</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Quick Start -->
+  <div class="bg-slate-800 rounded-2xl p-8 text-white">
+    <h2 class="text-lg font-bold mb-4 flex items-center gap-2">
+      <span class="material-symbols-outlined text-amber-400">terminal</span>
+      快速啟動
+    </h2>
+    <div class="grid md:grid-cols-2 gap-6">
+      <div>
+        <p class="text-slate-400 text-sm mb-3">第一次使用：</p>
+        <div class="space-y-2">
+          <div class="bg-slate-900 rounded-lg px-4 py-3 font-mono text-sm text-green-400">cd ~/Desktop/adlo-project</div>
+          <div class="bg-slate-900 rounded-lg px-4 py-3 font-mono text-sm text-green-400">npm install</div>
+          <div class="bg-slate-900 rounded-lg px-4 py-3 font-mono text-sm text-green-400">node server.js</div>
+        </div>
+      </div>
+      <div>
+        <p class="text-slate-400 text-sm mb-3">啟動後開啟：</p>
+        <div class="space-y-2">
+          <div class="bg-slate-900 rounded-lg px-4 py-3 text-sm flex items-center justify-between">
+            <span class="text-slate-300">目錄頁</span>
+            <code class="text-amber-400 font-mono">localhost:3000/directory.html</code>
+          </div>
+          <div class="bg-slate-900 rounded-lg px-4 py-3 text-sm flex items-center justify-between">
+            <span class="text-slate-300">主站</span>
+            <code class="text-amber-400 font-mono">localhost:3000</code>
+          </div>
+          <div class="bg-slate-900 rounded-lg px-4 py-3 text-sm flex items-center justify-between">
+            <span class="text-slate-300">管理後台</span>
+            <code class="text-amber-400 font-mono">localhost:3000/admin.html</code>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- Footer -->
+<div class="text-center py-8 text-slate-400 text-xs">
+  adlo Project · 本地端開發環境 · <span id="currentTime"></span>
+</div>
+
+<script>
+  // 時間顯示
+  function updateTime() {
+    document.getElementById('currentTime').textContent = new Date().toLocaleString('zh-TW');
+  }
+  updateTime();
+  setInterval(updateTime, 1000);
+
+  // 伺服器狀態 + 申請數
+  async function checkServer() {
+    try {
+      const res = await fetch('/api/submissions');
+      const data = await res.json();
+      const newCount = data.filter(s => s.status === 'new').length;
+
+      document.getElementById('statusDot').className = 'w-2 h-2 rounded-full bg-green-400 inline-block';
+      document.getElementById('statusText').textContent = '伺服器運行中';
+      document.getElementById('submissionCount').textContent = `共 ${data.length} 筆申請`;
+      document.getElementById('totalSubmissions').textContent = data.length;
+
+      if (newCount > 0) {
+        const badge = document.getElementById('newBadge');
+        badge.textContent = `${newCount} 筆新申請`;
+        badge.classList.remove('hidden');
+      }
+    } catch {
+      document.getElementById('statusDot').className = 'w-2 h-2 rounded-full bg-red-400 inline-block';
+      document.getElementById('statusText').textContent = '伺服器未啟動';
+      document.getElementById('totalSubmissions').textContent = '—';
+    }
+  }
+  checkServer();
+  setInterval(checkServer, 10000);
+</script>
+</body>
+</html>

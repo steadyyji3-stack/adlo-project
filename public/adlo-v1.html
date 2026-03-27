@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="zh-Hant">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>adlo v1 | 深色服務欄版本</title>
+<meta content="透過 Local SEO 與 GEO 區域精準廣告，為你的實體店面打造自動導流系統。" name="description"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,FILL@0..1&display=swap" rel="stylesheet"/>
+<script src="https://unpkg.com/lucide@latest"></script>
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode:"class",
+    theme:{
+      extend:{
+        colors:{
+          "primary":"#334155","primary-container":"#475569","on-primary":"#ffffff",
+          "secondary":"#a855f7","accent":"#92400e","surface":"#f8fafc",
+          "surface-container":"#f1f5f9","surface-container-low":"#f8fafc",
+          "on-surface":"#1e293b","on-surface-variant":"#64748b","outline":"#cbd5e1"
+        },
+        fontFamily:{"headline":["Manrope","sans-serif"],"body":["Inter","sans-serif"],"label":["Inter","sans-serif"]},
+        borderRadius:{"DEFAULT":"0.25rem","lg":"0.375rem","xl":"0.5rem","full":"9999px"},
+      },
+    },
+  }
+</script>
+<style>
+  .material-symbols-outlined{font-variation-settings:'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24;}
+  .cta-gradient{background:linear-gradient(135deg,#92400e 0%,#b45309 100%);}
+  .editorial-shadow{box-shadow:0 10px 30px -10px rgba(51,65,85,0.1);}
+</style>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet"/>
+</head>
+<body class="bg-surface font-body text-on-surface">
+
+<!-- Version Badge -->
+<div class="fixed top-0 left-0 right-0 z-[100] bg-amber-700 text-white text-center text-xs py-1.5 font-medium">
+  ⚠ 設計稿 v1 — 深色服務欄版本 &nbsp;|&nbsp;
+  <a href="/directory.html" class="underline hover:no-underline">← 返回目錄</a>
+  &nbsp;|&nbsp;
+  <a href="/" class="underline hover:no-underline">查看最終版 →</a>
+</div>
+
+<!-- TopNavBar -->
+<nav class="fixed top-7 w-full z-50 bg-slate-50/80 backdrop-blur-md shadow-sm shadow-slate-200/50">
+  <div class="flex items-center justify-between px-8 py-4 max-w-screen-2xl mx-auto">
+    <div class="text-3xl font-extrabold tracking-tighter text-slate-900 transition-transform hover:scale-105 duration-300" style="font-family:'Playfair Display',serif;">adlo</div>
+    <div class="hidden md:flex items-center gap-8">
+      <a class="text-slate-500 hover:text-slate-800 transition-colors text-sm font-medium" href="#services">Services</a>
+      <a class="text-slate-500 hover:text-slate-800 transition-colors text-sm font-medium" href="#factory">工廠實力</a>
+      <a class="text-slate-500 hover:text-slate-800 transition-colors text-sm font-medium" href="#process">接單流程</a>
+      <a class="text-slate-500 hover:text-slate-800 transition-colors text-sm font-medium" href="#why-us">Why Us</a>
+      <button class="bg-accent text-white px-6 py-2 rounded font-semibold text-sm hover:opacity-90 transition-all duration-200 shadow-md">Free Ad Audit</button>
+    </div>
+    <div class="md:hidden"><span class="material-symbols-outlined text-slate-700">menu</span></div>
+  </div>
+</nav>
+
+<!-- Hero Section -->
+<section class="relative pt-40 pb-20 md:pt-56 md:pb-32 overflow-hidden bg-white">
+  <div class="max-w-7xl mx-auto px-8 grid md:grid-cols-2 gap-12 items-center">
+    <div class="relative z-10">
+      <span class="inline-block px-4 py-1 rounded bg-slate-100 text-slate-600 text-xs font-bold tracking-widest uppercase mb-6">Regional Precision Agency</span>
+      <h1 class="font-headline text-4xl md:text-5xl font-extrabold text-slate-800 leading-tight mb-6 tracking-tight">
+        精準鎖定商圈客源，讓<span class="text-accent">「附近顧客主動找上門」</span>
+      </h1>
+      <p class="text-lg md:text-xl text-slate-500 leading-relaxed mb-10 max-w-lg">
+        透過 Local SEO (地圖優化) 與 GEO 區域精準廣告，為你的實體店面打造自動導流系統。
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4">
+        <button class="cta-gradient text-white px-8 py-4 rounded font-bold text-lg hover:brightness-110 transition-all duration-300 shadow-xl shadow-accent/20">獲取 15 分鐘免費諮詢</button>
+        <button class="border border-slate-200 text-slate-700 px-8 py-4 rounded font-bold text-lg hover:bg-slate-50 transition-all duration-300">查看解決方案</button>
+      </div>
+    </div>
+    <div class="relative hidden md:block">
+      <div class="absolute -top-20 -right-20 w-96 h-96 bg-slate-100 opacity-40 rounded-full blur-3xl"></div>
+      <div class="relative bg-white rounded shadow-2xl overflow-hidden p-2 border border-slate-100">
+        <img alt="Digital Marketing Strategy" class="rounded w-full h-[500px] object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBLRdhoiArez9PnoTWnFiCq8-l04gm3i5YhQ2xAWcAHBL59vfz9ZUmPVFs9p-mz5yk2qzvOf57Kjxjl4rrZWfzxYZFjpj9nSLDCKkKI5LVV7pkMND3mLIXUwSKv67eQypJQltibdr430KgGbjGXS5xRVWLQ5FePco0h7igzqKh96bKgu5dE-4esISLuLOUTAbWFqJ_m8W5f6VH3mAVesTrDdYm-uxdIovpscFk1E5pTFnAgxr-mzY52oceHAHLfTJ5yPIxCYJtGHw"/>
+        <div class="absolute bottom-10 left-10 right-10 bg-white/95 backdrop-blur-md p-6 rounded shadow-lg border border-slate-100">
+          <div class="flex items-center gap-4">
+            <div class="w-12 h-12 bg-accent rounded flex items-center justify-center">
+              <span class="material-symbols-outlined text-white">trending_up</span>
+            </div>
+            <div>
+              <div class="text-slate-800 font-bold text-lg">+142% 門店預約率</div>
+              <div class="text-slate-500 text-sm">台北信義區牙醫診所案例</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Pain Points -->
+<section class="py-24 bg-slate-50" id="why-us">
+  <div class="max-w-7xl mx-auto px-8">
+    <div class="text-center mb-16">
+      <h2 class="font-headline text-3xl md:text-4xl font-bold text-slate-800 mb-4">實體店面老闆的 3 大行銷痛點</h2>
+      <div class="w-20 h-0.5 bg-accent mx-auto"></div>
+    </div>
+    <div class="grid md:grid-cols-3 gap-8">
+      <div class="bg-white p-10 rounded shadow-sm hover:editorial-shadow transition-all duration-500 group border border-slate-100">
+        <div class="w-14 h-14 bg-slate-50 rounded flex items-center justify-center mb-6 group-hover:bg-slate-700 transition-colors">
+          <span class="material-symbols-outlined text-slate-700 group-hover:text-white">trending_down</span>
+        </div>
+        <h3 class="text-xl font-bold text-slate-800 mb-4">廣告費越變越貴</h3>
+        <p class="text-slate-500 leading-relaxed">Facebook、Google 廣告費逐年攀升，卻只帶進了「點擊」而非真正的店面「客流」。</p>
+      </div>
+      <div class="bg-white p-10 rounded shadow-sm hover:editorial-shadow transition-all duration-500 group border border-slate-100">
+        <div class="w-14 h-14 bg-slate-50 rounded flex items-center justify-center mb-6 group-hover:bg-slate-700 transition-colors">
+          <span class="material-symbols-outlined text-slate-700 group-hover:text-white">location_off</span>
+        </div>
+        <h3 class="text-xl font-bold text-slate-800 mb-4">搜不到你的店</h3>
+        <p class="text-slate-500 leading-relaxed">顧客在店面方圓 3 公里搜尋關鍵字，出現的卻總是競爭對手，您的店在地圖上被隱形了。</p>
+      </div>
+      <div class="bg-white p-10 rounded shadow-sm hover:editorial-shadow transition-all duration-500 group border border-slate-100">
+        <div class="w-14 h-14 bg-slate-50 rounded flex items-center justify-center mb-6 group-hover:bg-slate-700 transition-colors">
+          <span class="material-symbols-outlined text-slate-700 group-hover:text-white">query_stats</span>
+        </div>
+        <h3 class="text-xl font-bold text-slate-800 mb-4">無法追蹤轉換率</h3>
+        <p class="text-slate-500 leading-relaxed">看著後台數據卻不知道到底有多少人是看了廣告才走進店裡，錢像投進深水池裡。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Service Modules — v1 深色橫排版 -->
+<section class="py-24 bg-white" id="services">
+  <div class="max-w-7xl mx-auto px-8">
+    <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+      <div class="max-w-2xl">
+        <h2 class="font-headline text-3xl md:text-5xl font-bold text-slate-800 mb-6 leading-tight">打破僵局的「區域集客引擎」</h2>
+        <p class="text-slate-500 text-lg">我們不做虛而不實的全國性廣告，我們只專注在您的店面周遭商圈，建立密不透風的客戶攔截網。</p>
+      </div>
+      <div class="hidden md:block">
+        <span class="text-slate-700 font-bold tracking-widest border-b border-accent pb-2">OUR SOLUTIONS</span>
+      </div>
+    </div>
+    <!-- v1 特色：深色三欄橫排 -->
+    <div class="grid lg:grid-cols-3 gap-0 rounded overflow-hidden shadow-2xl border border-slate-100">
+      <div class="relative group p-12 bg-slate-700 text-white border-r border-white/5 overflow-hidden">
+        <div class="relative z-10">
+          <span class="text-accent font-bold text-xs tracking-tighter mb-4 block">STEP 01</span>
+          <h4 class="text-2xl font-bold mb-6">Google 地圖霸屏 (Local SEO)</h4>
+          <p class="text-slate-300 leading-relaxed mb-8">優化 GMB 商家檔案，提升在地搜尋排名，讓顧客在附近搜尋時，您的店面永遠在最前面。</p>
+          <div class="flex items-center gap-2 group-hover:gap-4 transition-all text-accent font-bold cursor-pointer">
+            <span>了解更多</span><span class="material-symbols-outlined">arrow_forward</span>
+          </div>
+        </div>
+        <div class="absolute top-0 right-0 p-8 opacity-10 group-hover:scale-110 transition-transform">
+          <span class="material-symbols-outlined text-9xl">map</span>
+        </div>
+      </div>
+      <div class="relative group p-12 bg-slate-600 text-white border-r border-white/5 overflow-hidden">
+        <div class="relative z-10">
+          <span class="text-accent font-bold text-xs tracking-tighter mb-4 block">STEP 02</span>
+          <h4 class="text-2xl font-bold mb-6">GEO 區域精準廣告投放</h4>
+          <p class="text-slate-300 leading-relaxed mb-8">針對店面周邊 5-10 公里目標客群投放高強度廣告，鎖定「正在尋找服務」的高含金量客戶。</p>
+          <div class="flex items-center gap-2 group-hover:gap-4 transition-all text-accent font-bold cursor-pointer">
+            <span>了解更多</span><span class="material-symbols-outlined">arrow_forward</span>
+          </div>
+        </div>
+        <div class="absolute top-0 right-0 p-8 opacity-10 group-hover:scale-110 transition-transform">
+          <span class="material-symbols-outlined text-9xl">ads_click</span>
+        </div>
+      </div>
+      <div class="relative group p-12 bg-slate-700 text-white overflow-hidden">
+        <div class="relative z-10">
+          <span class="text-accent font-bold text-xs tracking-tighter mb-4 block">STEP 03</span>
+          <h4 class="text-2xl font-bold mb-6">轉換率與數據基建</h4>
+          <p class="text-slate-300 leading-relaxed mb-8">建置 GA4、Pixel 及電話追蹤系統，將「線下入店」與「線上點擊」數據對接，讓每一分預算都有據可依。</p>
+          <div class="flex items-center gap-2 group-hover:gap-4 transition-all text-accent font-bold cursor-pointer">
+            <span>了解更多</span><span class="material-symbols-outlined">arrow_forward</span>
+          </div>
+        </div>
+        <div class="absolute top-0 right-0 p-8 opacity-10 group-hover:scale-110 transition-transform">
+          <span class="material-symbols-outlined text-9xl">database</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Factory Excellence -->
+<section class="py-24 bg-slate-50" id="factory">
+  <div class="max-w-7xl mx-auto px-8">
+    <div class="text-center mb-16">
+      <h2 class="font-headline text-3xl md:text-4xl font-bold text-slate-800 mb-4">在地工廠，卓越產能</h2>
+      <div class="w-20 h-0.5 bg-accent mx-auto"></div>
+      <p class="mt-6 text-slate-500 max-w-2xl mx-auto">我們擁有完整的區域服務鏈，不僅提供線上行銷，更有強大的實體支援體系與<span class="font-bold text-slate-700">東南亞在地佈局</span>。</p>
+    </div>
+    <div class="grid md:grid-cols-3 gap-12">
+      <div class="bg-white p-8 rounded border border-slate-100 shadow-sm text-center transition-all duration-300 hover:-translate-y-1 hover:shadow-md">
+        <div class="w-16 h-16 bg-slate-100 rounded-full flex items-center justify-center mx-auto mb-6"><i class="text-accent w-8 h-8" data-lucide="factory"></i></div>
+        <h3 class="text-xl font-bold text-slate-800 mb-3">跨境在地化生產</h3>
+        <p class="text-slate-500 text-sm leading-relaxed">深耕東南亞多年，實現<span class="font-semibold">跨境在地化生產</span>，確保行銷素材能第一時間精準輸出。</p>
+      </div>
+      <div class="bg-white p-8 rounded border border-slate-100 shadow-sm text-center transition-all duration-300 hover:-translate-y-1 hover:shadow-md">
+        <div class="w-16 h-16 bg-slate-100 rounded-full flex items-center justify-center mx-auto mb-6"><i class="text-accent w-8 h-8" data-lucide="globe"></i></div>
+        <h3 class="text-xl font-bold text-slate-800 mb-3">服務全球台商工廠</h3>
+        <p class="text-slate-500 text-sm leading-relaxed">專為<span class="font-semibold">全球台商工廠</span>設計，從創意到執行均符合國際品質規範，提供最穩定的服務鏈。</p>
+      </div>
+      <div class="bg-white p-8 rounded border border-slate-100 shadow-sm text-center transition-all duration-300 hover:-translate-y-1 hover:shadow-md">
+        <div class="w-16 h-16 bg-slate-100 rounded-full flex items-center justify-center mx-auto mb-6"><i class="text-accent w-8 h-8" data-lucide="zap"></i></div>
+        <h3 class="text-xl font-bold text-slate-800 mb-3">高效自動化產能</h3>
+        <p class="text-slate-500 text-sm leading-relaxed">結合在地化生產與自動化設備，保證活動高峰期依然能穩定輸出，不間斷為您導流。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Order Fulfillment Flow -->
+<section class="py-24 bg-white" id="process">
+  <div class="max-w-7xl mx-auto px-8">
+    <div class="text-center mb-16">
+      <h2 class="font-headline text-3xl md:text-4xl font-bold text-slate-800 mb-4">數位化接單，效率看得見</h2>
+      <div class="w-20 h-0.5 bg-accent mx-auto"></div>
+      <p class="mt-4 text-slate-500">透過<span class="font-bold text-slate-700">全球台商系統串接</span>，實現從詢價到投放的全數位化高效管理。</p>
+    </div>
+    <div class="relative">
+      <div class="hidden lg:block absolute top-12 left-0 w-full h-0.5 bg-slate-100 z-0"></div>
+      <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-8 relative z-10">
+        <div class="flex flex-col items-center group">
+          <div class="w-24 h-24 bg-white border-2 border-accent rounded-full flex items-center justify-center mb-6 shadow-md group-hover:bg-accent group-hover:text-white transition-all duration-300">
+            <div class="text-center"><span class="block text-2xl font-bold mb-1">1</span><i class="w-6 h-6 mx-auto" data-lucide="message-square"></i></div>
+          </div>
+          <h4 class="font-bold text-slate-800 mb-2">在線諮詢與詢價</h4>
+          <p class="text-slate-500 text-xs text-center px-4 leading-relaxed">填寫表單或線上客服，顧問將針對全球據點展開即時評估。</p>
+        </div>
+        <div class="flex flex-col items-center group">
+          <div class="w-24 h-24 bg-white border-2 border-accent rounded-full flex items-center justify-center mb-6 shadow-md group-hover:bg-accent group-hover:text-white transition-all duration-300">
+            <div class="text-center"><span class="block text-2xl font-bold mb-1">2</span><i class="w-6 h-6 mx-auto" data-lucide="cpu"></i></div>
+          </div>
+          <h4 class="font-bold text-slate-800 mb-2">系統智能匹配</h4>
+          <p class="text-slate-500 text-xs text-center px-4 leading-relaxed">AI 根據工廠位置與產業特性，自動匹配最適行銷模板與在地團隊。</p>
+        </div>
+        <div class="flex flex-col items-center group">
+          <div class="w-24 h-24 bg-white border-2 border-accent rounded-full flex items-center justify-center mb-6 shadow-md group-hover:bg-accent group-hover:text-white transition-all duration-300">
+            <div class="text-center"><span class="block text-2xl font-bold mb-1">3</span><i class="w-6 h-6 mx-auto" data-lucide="file-text"></i></div>
+          </div>
+          <h4 class="font-bold text-slate-800 mb-2">快速報價與確認</h4>
+          <p class="text-slate-500 text-xs text-center px-4 leading-relaxed">24 小時內產出專業分析報告與透明價格方案，全球同步零時差。</p>
+        </div>
+        <div class="flex flex-col items-center group">
+          <div class="w-24 h-24 bg-white border-2 border-accent rounded-full flex items-center justify-center mb-6 shadow-md group-hover:bg-accent group-hover:text-white transition-all duration-300">
+            <div class="text-center"><span class="block text-2xl font-bold mb-1">4</span><i class="w-6 h-6 mx-auto" data-lucide="settings"></i></div>
+          </div>
+          <h4 class="font-bold text-slate-800 mb-2">自動化排單生產</h4>
+          <p class="text-slate-500 text-xs text-center px-4 leading-relaxed">系統即時排程，廣告創意與實體物料同步進入跨境生產模式。</p>
+        </div>
+        <div class="flex flex-col items-center group">
+          <div class="w-24 h-24 bg-white border-2 border-accent rounded-full flex items-center justify-center mb-6 shadow-md group-hover:bg-accent group-hover:text-white transition-all duration-300">
+            <div class="text-center"><span class="block text-2xl font-bold mb-1">5</span><i class="w-6 h-6 mx-auto" data-lucide="bar-chart-3"></i></div>
+          </div>
+          <h4 class="font-bold text-slate-800 mb-2">狀態實時追蹤</h4>
+          <p class="text-slate-500 text-xs text-center px-4 leading-relaxed">透過專屬後台看板，隨時掌握全球投放數據與生產進度。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact Form -->
+<section class="py-24 bg-slate-50">
+  <div class="max-w-5xl mx-auto px-8">
+    <div class="bg-white rounded shadow-xl overflow-hidden flex flex-col md:flex-row border border-slate-100">
+      <div class="bg-slate-700 p-12 md:w-2/5 text-white">
+        <h2 class="font-headline text-3xl font-bold mb-6">準備好迎接新客流了嗎？</h2>
+        <p class="text-slate-300 mb-10 leading-relaxed">填寫下方表單，我們的資深區域行銷顧問將在 24 小時內為您進行初步的店面品牌健檢。</p>
+        <div class="space-y-6">
+          <div class="flex items-center gap-4"><span class="material-symbols-outlined text-accent">check_circle</span><span>免費 Local SEO 排名分析</span></div>
+          <div class="flex items-center gap-4"><span class="material-symbols-outlined text-accent">check_circle</span><span>競品廣告投放策略解析</span></div>
+          <div class="flex items-center gap-4"><span class="material-symbols-outlined text-accent">check_circle</span><span>店面集客漏斗優化建議</span></div>
+        </div>
+      </div>
+      <div class="p-12 md:w-3/5">
+        <p class="text-sm text-slate-400 mb-6 border border-slate-100 bg-slate-50 rounded p-3">
+          ℹ 此為設計稿預覽頁，表單已連接後端 API（與主站共用資料）
+        </p>
+        <form class="space-y-6" id="contactForm" novalidate>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <div>
+              <label class="block text-sm font-bold text-slate-700 mb-2">負責人姓名 *</label>
+              <input name="name" class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded focus:ring-1 focus:ring-amber-700 focus:outline-none transition-all" placeholder="例如：林先生" required type="text"/>
+            </div>
+            <div>
+              <label class="block text-sm font-bold text-slate-700 mb-2">聯絡電話 *</label>
+              <input name="phone" class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded focus:ring-1 focus:ring-amber-700 focus:outline-none transition-all" placeholder="09XX-XXX-XXX" required type="tel"/>
+            </div>
+          </div>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <div>
+              <label class="block text-sm font-bold text-slate-700 mb-2">Line ID</label>
+              <input name="lineId" class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded focus:ring-1 focus:ring-amber-700 focus:outline-none transition-all" placeholder="@id123" type="text"/>
+            </div>
+            <div>
+              <label class="block text-sm font-bold text-slate-700 mb-2">店家官網 / 地圖網址</label>
+              <input name="website" class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded focus:ring-1 focus:ring-amber-700 focus:outline-none transition-all" placeholder="https://..." type="url"/>
+            </div>
+          </div>
+          <div>
+            <label class="block text-sm font-bold text-slate-700 mb-4">目前面臨最大的行銷挑戰 (可多選)</label>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-6">
+              <label class="relative flex items-center"><input class="peer sr-only" name="challenges" type="checkbox" value="廣告費太貴"/><div class="w-full px-4 py-3 text-sm font-medium text-slate-600 bg-white border border-slate-200 rounded cursor-pointer transition-all peer-checked:border-amber-700 peer-checked:bg-amber-50 peer-checked:text-amber-800 hover:bg-slate-50">廣告費太貴</div></label>
+              <label class="relative flex items-center"><input class="peer sr-only" name="challenges" type="checkbox" value="Google 地圖搜不到"/><div class="w-full px-4 py-3 text-sm font-medium text-slate-600 bg-white border border-slate-200 rounded cursor-pointer transition-all peer-checked:border-amber-700 peer-checked:bg-amber-50 peer-checked:text-amber-800 hover:bg-slate-50">Google 地圖搜不到</div></label>
+              <label class="relative flex items-center"><input class="peer sr-only" name="challenges" type="checkbox" value="轉換率太低"/><div class="w-full px-4 py-3 text-sm font-medium text-slate-600 bg-white border border-slate-200 rounded cursor-pointer transition-all peer-checked:border-amber-700 peer-checked:bg-amber-50 peer-checked:text-amber-800 hover:bg-slate-50">轉換率太低</div></label>
+              <label class="relative flex items-center"><input class="peer sr-only" name="challenges" type="checkbox" value="缺乏專業行銷團隊"/><div class="w-full px-4 py-3 text-sm font-medium text-slate-600 bg-white border border-slate-200 rounded cursor-pointer transition-all peer-checked:border-amber-700 peer-checked:bg-amber-50 peer-checked:text-amber-800 hover:bg-slate-50">缺乏專業行銷團隊</div></label>
+              <label class="relative flex items-center"><input class="peer sr-only" name="challenges" type="checkbox" value="數據追蹤不完整"/><div class="w-full px-4 py-3 text-sm font-medium text-slate-600 bg-white border border-slate-200 rounded cursor-pointer transition-all peer-checked:border-amber-700 peer-checked:bg-amber-50 peer-checked:text-amber-800 hover:bg-slate-50">數據追蹤不完整</div></label>
+            </div>
+            <label class="block text-sm font-bold text-slate-700 mb-2">其他補充內容 (選填)</label>
+            <textarea name="notes" class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded focus:ring-1 focus:ring-amber-700 focus:outline-none transition-all" placeholder="如果有其他特定需求或困難，請在此告訴我們..." rows="2"></textarea>
+          </div>
+          <div id="formError" class="hidden px-4 py-3 bg-red-50 border border-red-200 rounded text-red-700 text-sm"></div>
+          <button id="submitBtn" class="w-full bg-amber-800 text-white font-bold py-4 rounded shadow-lg hover:brightness-110 transition-all duration-300 flex items-center justify-center gap-2" type="submit">
+            <span id="btnText">送出申請，獲取免費健檢報告</span>
+            <svg id="btnSpinner" class="hidden animate-spin h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8z"></path></svg>
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-slate-50 w-full border-t border-slate-200">
+  <div class="flex flex-col md:flex-row justify-between items-center px-12 py-10 w-full max-w-7xl mx-auto">
+    <div class="text-2xl font-extrabold tracking-tighter text-slate-900 mb-4 md:mb-0" style="font-family:'Playfair Display',serif;">adlo</div>
+    <a href="/directory.html" class="text-amber-700 hover:underline text-sm font-medium">← 返回頁面目錄</a>
+    <div class="text-slate-500 text-xs uppercase tracking-wide mt-4 md:mt-0">© 2024 adlo. All rights reserved.</div>
+  </div>
+</footer>
+
+<!-- Success Modal -->
+<div class="fixed inset-0 z-[100] hidden items-center justify-center p-4" id="successModal">
+  <div class="absolute inset-0 bg-slate-900/40 backdrop-blur-sm" onclick="closeModal()"></div>
+  <div class="relative bg-white rounded p-8 max-w-sm w-full shadow-2xl text-center transform scale-95 opacity-0 transition-all duration-300" id="modalContent">
+    <div class="w-20 h-20 bg-slate-50 rounded-full flex items-center justify-center mx-auto mb-6">
+      <span class="material-symbols-outlined text-slate-700 text-4xl" style="font-variation-settings:'FILL' 1;">check_circle</span>
+    </div>
+    <h3 class="text-2xl font-bold text-slate-800 mb-2">申請已送出！</h3>
+    <p class="text-slate-500 mb-2">顧問將在 24 小時內與您聯繫，請保持電話暢通。</p>
+    <p id="modalRefId" class="text-xs text-slate-400 mb-8"></p>
+    <button class="w-full border border-slate-200 text-slate-700 font-bold py-3 rounded hover:bg-slate-50 transition-all" onclick="closeModal()">關閉</button>
+  </div>
+</div>
+
+<script>
+  lucide.createIcons();
+  const form=document.getElementById('contactForm');
+  const modal=document.getElementById('successModal');
+  const modalContent=document.getElementById('modalContent');
+  const submitBtn=document.getElementById('submitBtn');
+  const btnText=document.getElementById('btnText');
+  const btnSpinner=document.getElementById('btnSpinner');
+  const formError=document.getElementById('formError');
+  function setLoading(l){submitBtn.disabled=l;btnText.textContent=l?'送出中...':'送出申請，獲取免費健檢報告';btnSpinner.classList.toggle('hidden',!l);}
+  function showError(m){formError.textContent=m;formError.classList.remove('hidden');}
+  function hideError(){formError.classList.add('hidden');}
+  form.addEventListener('submit',async function(e){
+    e.preventDefault();hideError();
+    const name=form.querySelector('[name="name"]').value.trim();
+    const phone=form.querySelector('[name="phone"]').value.trim();
+    if(!name){showError('請填寫負責人姓名');return;}
+    if(!phone){showError('請填寫聯絡電話');return;}
+    const payload={name,phone,lineId:form.querySelector('[name="lineId"]').value.trim(),website:form.querySelector('[name="website"]').value.trim(),challenges:Array.from(form.querySelectorAll('[name="challenges"]:checked')).map(cb=>cb.value),notes:form.querySelector('[name="notes"]').value.trim()};
+    setLoading(true);
+    try{
+      const res=await fetch('/api/contact',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)});
+      const result=await res.json();
+      if(result.success){document.getElementById('modalRefId').textContent=`申請編號：#${result.id}`;modal.classList.remove('hidden');modal.classList.add('flex');setTimeout(()=>{modalContent.classList.remove('scale-95','opacity-0');modalContent.classList.add('scale-100','opacity-100');},10);setTimeout(()=>closeModal(),5000);}
+      else showError(result.message||'送出失敗，請再試一次');
+    }catch{showError('網路錯誤，請確認伺服器已啟動');}
+    finally{setLoading(false);}
+  });
+  function closeModal(){modalContent.classList.add('scale-95','opacity-0');modalContent.classList.remove('scale-100','opacity-100');setTimeout(()=>{modal.classList.add('hidden');modal.classList.remove('flex');form.reset();},300);}
+</script>
+</body>
+</html>

@@ -1,0 +1,13 @@
+{
+  "name": "adlo-backend",
+  "version": "1.0.0",
+  "description": "adlo 區域精準行銷 後端服務",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}

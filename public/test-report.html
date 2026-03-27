@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>adlo | 實機測試報告</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,FILL@0..1&display=swap" rel="stylesheet"/>
+<style>
+  body { font-family: 'Inter', sans-serif; }
+  code, .mono { font-family: 'JetBrains Mono', monospace; }
+  .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; vertical-align: middle; }
+  .pass  { background:#dcfce7; color:#166534; border-color:#bbf7d0; }
+  .fail  { background:#fee2e2; color:#991b1b; border-color:#fecaca; }
+  .live-pass { color:#16a34a; }
+  .live-fail { color:#dc2626; }
+  .live-pending { color:#9ca3af; }
+  @keyframes pulse-dot { 0%,100%{opacity:1} 50%{opacity:.4} }
+  .pulse { animation: pulse-dot 1.5s ease-in-out infinite; }
+</style>
+</head>
+<body class="bg-slate-950 text-white min-h-screen">
+
+<!-- Header -->
+<div class="border-b border-slate-800">
+  <div class="max-w-5xl mx-auto px-8 py-8">
+    <div class="flex items-start justify-between gap-4">
+      <div>
+        <div class="flex items-center gap-3 mb-2">
+          <span class="text-slate-500 text-xs mono">adlo-project /</span>
+          <span class="text-white font-bold">test-report.html</span>
+        </div>
+        <h1 class="text-3xl font-bold tracking-tight mb-1">實機測試報告</h1>
+        <p class="text-slate-400 text-sm">Local Integration Test · <span class="mono">http://localhost:3000</span></p>
+      </div>
+      <div class="text-right text-sm">
+        <div class="text-slate-500 text-xs mb-1">靜態記錄時間</div>
+        <div class="mono text-slate-300 text-xs">2026-03-27 16:35:19</div>
+        <div class="mt-2 text-slate-500 text-xs">實時狀態</div>
+        <div id="liveTime" class="mono text-slate-300 text-xs"></div>
+      </div>
+    </div>
+
+    <!-- Summary Bar -->
+    <div class="mt-6 grid grid-cols-4 gap-3">
+      <div class="bg-slate-900 rounded-xl p-4 border border-slate-800">
+        <div class="text-slate-400 text-xs mb-1">靜態測試</div>
+        <div class="text-2xl font-bold text-green-400">13 <span class="text-sm font-normal text-slate-400">/ 13</span></div>
+        <div class="text-xs text-green-400 mt-1">全部通過</div>
+      </div>
+      <div class="bg-slate-900 rounded-xl p-4 border border-slate-800">
+        <div class="text-slate-400 text-xs mb-1">頁面可用</div>
+        <div class="text-2xl font-bold text-green-400">5 <span class="text-sm font-normal text-slate-400">/ 5</span></div>
+        <div class="text-xs text-green-400 mt-1">HTTP 200</div>
+      </div>
+      <div class="bg-slate-900 rounded-xl p-4 border border-slate-800">
+        <div class="text-slate-400 text-xs mb-1">API 端點</div>
+        <div class="text-2xl font-bold text-green-400">8 <span class="text-sm font-normal text-slate-400">/ 8</span></div>
+        <div class="text-xs text-green-400 mt-1">全部通過</div>
+      </div>
+      <div class="bg-slate-900 rounded-xl p-4 border border-slate-800">
+        <div class="text-slate-400 text-xs mb-1">即時伺服器</div>
+        <div class="text-2xl font-bold" id="liveStatus">
+          <span class="pulse text-slate-500">…</span>
+        </div>
+        <div class="text-xs mt-1" id="liveStatusText">檢查中</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="max-w-5xl mx-auto px-8 py-10 space-y-10">
+
+  <!-- Section 1: 頁面可用性 -->
+  <section>
+    <h2 class="text-sm font-bold text-slate-400 uppercase tracking-widest mb-4 flex items-center gap-2">
+      <span class="material-symbols-outlined text-base">web</span> 頁面可用性測試
+    </h2>
+    <div class="bg-slate-900 rounded-2xl border border-slate-800 overflow-hidden">
+      <table class="w-full text-sm">
+        <thead>
+          <tr class="border-b border-slate-800 text-xs text-slate-500 uppercase tracking-wide">
+            <th class="text-left px-6 py-3 font-semibold">頁面</th>
+            <th class="text-left px-6 py-3 font-semibold">路徑</th>
+            <th class="text-center px-4 py-3 font-semibold">靜態結果</th>
+            <th class="text-center px-4 py-3 font-semibold">即時狀態</th>
+            <th class="text-left px-6 py-3 font-semibold">說明</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-slate-800/50" id="pagesTable">
+          <tr class="hover:bg-slate-800/30 transition-colors">
+            <td class="px-6 py-4 font-semibold text-white">adlo 主站（最終版）</td>
+            <td class="px-6 py-4"><a href="/" class="mono text-amber-400 hover:underline text-xs">/</a></td>
+            <td class="text-center px-4 py-4"><span class="pass border text-xs font-bold px-2 py-0.5 rounded-full">200 ✓</span></td>
+            <td class="text-center px-4 py-4"><span class="live-pending pulse text-xs mono" data-url="/">…</span></td>
+            <td class="px-6 py-4 text-slate-400 text-xs">含台灣市場方案、表單整合後端</td>
+          </tr>
+          <tr class="hover:bg-slate-800/30 transition-colors">
+            <td class="px-6 py-4 font-semibold text-white">頁面目錄</td>
+            <td class="px-6 py-4"><a href="/directory.html" class="mono text-amber-400 hover:underline text-xs">/directory.html</a></td>
+            <td class="text-center px-4 py-4"><span class="pass border text-xs font-bold px-2 py-0.5 rounded-full">200 ✓</span></td>
+            <td class="text-center px-4 py-4"><span class="live-pending pulse text-xs mono" data-url="/directory.html">…</span></td>
+            <td class="px-6 py-4 text-slate-400 text-xs">統一入口 + 版本比較 + 即時申請數</td>
+          </tr>
+          <tr class="hover:bg-slate-800/30 transition-colors">
+            <td class="px-6 py-4 font-semibold text-white">adlo v1（深色服務欄）</td>
+            <td class="px-6 py-4"><a href="/adlo-v1.html" class="mono text-amber-400 hover:underline text-xs">/adlo-v1.html</a></td>
+            <td class="text-center px-4 py-4"><span class="pass border text-xs font-bold px-2 py-0.5 rounded-full">200 ✓</span></td>
+            <td class="text-center px-4 py-4"><span class="live-pending pulse text-xs mono" data-url="/adlo-v1.html">…</span></td>
+            <td class="px-6 py-4 text-slate-400 text-xs">早期版本、深色 bg-slate-700 三欄</td>
+          </tr>
+          <tr class="hover:bg-slate-800/30 transition-colors">
+            <td class="px-6 py-4 font-semibold text-white">GeoBoost R.（接單流程）</td>
+            <td class="px-6 py-4"><a href="/geoboost.html" class="mono text-amber-400 hover:underline text-xs">/geoboost.html</a></td>
+            <td class="text-center px-4 py-4"><span class="pass border text-xs font-bold px-2 py-0.5 rounded-full">200 ✓</span></td>
+            <td class="text-center px-4 py-4"><span class="live-pending pulse text-xs mono" data-url="/geoboost.html">…</span></td>
+            <td class="px-6 py-4 text-slate-400 text-xs">英文版、獨立品牌、Bento Grid</td>
+          </tr>
+          <tr class="hover:bg-slate-800/30 transition-colors">
+            <td class="px-6 py-4 font-semibold text-white">管理後台</td>
+            <td class="px-6 py-4"><a href="/admin.html" class="mono text-amber-400 hover:underline text-xs">/admin.html</a></td>
+            <td class="text-center px-4 py-4"><span class="pass border text-xs font-bold px-2 py-0.5 rounded-full">200 ✓</span></td>
+            <td class="text-center px-4 py-4"><span class="live-pending pulse text-xs mono" data-url="/admin.html">…</span></td>
+            <td class="px-6 py-4 text-slate-400 text-xs">申請管理、狀態追蹤、搜尋篩選</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- Section 2: API 測試（靜態） -->
+  <section>
+    <h2 class="text-sm font-bold text-slate-400 uppercase tracking-widest mb-4 flex items-center gap-2">
+      <span class="material-symbols-outlined text-base">api</span> API 端點靜態測試結果
+      <span class="text-xs text-slate-600 normal-case tracking-normal font-normal">（curl 實機執行）</span>
+    </h2>
+    <div class="space-y-3">
+
+      <!-- POST 正常 -->
+      <div class="bg-slate-900 rounded-xl border border-slate-800 p-5">
+        <div class="flex items-center gap-3 mb-3">
+          <span class="pass border text-xs font-bold px-2 py-0.5 rounded-full">PASS</span>
+          <span class="text-xs font-black text-green-400 mono bg-green-950 px-2 py-0.5 rounded">POST</span>
+          <code class="text-sm text-white mono">/api/contact</code>
+          <span class="text-slate-500 text-xs ml-auto">正常送出</span>
+        </div>
+        <div class="grid md:grid-cols-2 gap-3">
+          <div>
+            <div class="text-xs text-slate-500 mb-1">Request Payload</div>
+            <pre class="bg-slate-950 rounded-lg p-3 text-xs mono text-slate-300 overflow-x-auto">{
+  "name": "測試用戶",
+  "phone": "0912-000-001",
+  "lineId": "@test",
+  "challenges": ["廣告費太貴"],
+  "notes": "目錄測試"
+}</pre>
+          </div>
+          <div>
+            <div class="text-xs text-slate-500 mb-1">Response <span class="text-green-400">HTTP 200</span></div>
+            <pre class="bg-slate-950 rounded-lg p-3 text-xs mono text-green-300 overflow-x-auto">{
+  "success": true,
+  "message": "申請已成功送出！",
+  "id": 1774600504831
+}</pre>
+          </div>
+        </div>
+      </div>
+
+      <!-- POST 缺少姓名 -->
+      <div class="bg-slate-900 rounded-xl border border-slate-800 p-5">
+        <div class="flex items-center gap-3 mb-3">
+          <span class="pass border text-xs font-bold px-2 py-0.5 rounded-full">PASS</span>
+          <span class="text-xs font-black text-green-400 mono bg-green-950 px-2 py-0.5 rounded">POST</span>
+          <code class="text-sm text-white mono">/api/contact</code>
+          <span class="text-slate-500 text-xs ml-auto">缺少姓名 → 應拒絕</span>
+        </div>
+        <div class="grid md:grid-cols-2 gap-3">
+          <div>
+            <div class="text-xs text-slate-500 mb-1">Request Payload</div>
+            <pre class="bg-slate-950 rounded-lg p-3 text-xs mono text-slate-300 overflow-x-auto">{ "phone": "0912-000-002" }</pre>
+          </div>
+          <div>
+            <div class="text-xs text-slate-500 mb-1">Response <span class="text-amber-400">HTTP 400</span></div>
+            <pre class="bg-slate-950 rounded-lg p-3 text-xs mono text-amber-300 overflow-x-auto">{
+  "success": false,
+  "message": "負責人姓名為必填欄位"
+}</pre>
+          </div>
+        </div>
+      </div>
+
+      <!-- POST 缺少電話 -->
+      <div class="bg-slate-900 rounded-xl border border-slate-800 p-5">
+        <div class="flex items-center gap-3 mb-3">
+          <span class="pass border text-xs font-bold px-2 py-0.5 rounded-full">PASS</span>
+          <span class="text-xs font-black text-green-400 mono bg-green-950 px-2 py-0.5 rounded">POST</span>
+          <code class="text-sm text-white mono">/api/contact</code>
+          <span class="text-slate-500 text-xs ml-auto">缺少電話 → 應拒絕</span>
+        </div>
+        <div class="grid md:grid-cols-2 gap-3">
+          <div>
+            <div class="text-xs text-slate-500 mb-1">Request Payload</div>
+            <pre class="bg-slate-950 rounded-lg p-3 text-xs mono text-slate-300 overflow-x-auto">{ "name": "測試" }</pre>
+          </div>
+          <div>
+            <div class="text-xs text-slate-500 mb-1">Response <span class="text-amber-400">HTTP 400</span></div>
+            <pre class="bg-slate-950 rounded-lg p-3 text-xs mono text-amber-300 overflow-x-auto">{
+  "success": false,
+  "message": "聯絡電話為必填欄位"
+}</pre>
+          </div>
+        </div>
+      </div>
+
+      <!-- PATCH status -->
+      <div class="bg-slate-900 rounded-xl border border-slate-800 p-5">
+        <div class="flex items-center gap-3 mb-3">
+          <span class="pass border text-xs font-bold px-2 py-0.5 rounded-full">PASS</span>
+          <span class="text-xs font-black text-amber-400 mono bg-amber-950 px-2 py-0.5 rounded">PATCH</span>
+          <code class="text-sm text-white mono">/api/submissions/:id/status</code>
+          <span class="text-slate-500 text-xs ml-auto">更新為 contacted</span>
+        </div>
+        <div class="grid md:grid-cols-2 gap-3">
+          <div>
+            <div class="text-xs text-slate-500 mb-1">Request</div>
+            <pre class="bg-slate-950 rounded-lg p-3 text-xs mono text-slate-300 overflow-x-auto">{ "status": "contacted" }</pre>
+          </div>
+          <div>
+            <div class="text-xs text-slate-500 mb-1">Response <span class="text-green-400">HTTP 200</span></div>
+            <pre class="bg-slate-950 rounded-lg p-3 text-xs mono text-green-300 overflow-x-auto">{ "success": true }</pre>
+          </div>
+        </div>
+      </div>
+
+      <!-- PATCH 無效狀態 -->
+      <div class="bg-slate-900 rounded-xl border border-slate-800 p-5">
+        <div class="flex items-center gap-3 mb-3">
+          <span class="pass border text-xs font-bold px-2 py-0.5 rounded-full">PASS</span>
+          <span class="text-xs font-black text-amber-400 mono bg-amber-950 px-2 py-0.5 rounded">PATCH</span>
+          <code class="text-sm text-white mono">/api/submissions/:id/status</code>
+          <span class="text-slate-500 text-xs ml-auto">無效狀態值 → 應拒絕</span>
+        </div>
+        <div class="grid md:grid-cols-2 gap-3">
+          <div>
+            <div class="text-xs text-slate-500 mb-1">Request</div>
+            <pre class="bg-slate-950 rounded-lg p-3 text-xs mono text-slate-300 overflow-x-auto">{ "status": "invalid" }</pre>
+          </div>
+          <div>
+            <div class="text-xs text-slate-500 mb-1">Response <span class="text-amber-400">HTTP 400</span></div>
+            <pre class="bg-slate-950 rounded-lg p-3 text-xs mono text-amber-300 overflow-x-auto">{
+  "success": false,
+  "message": "無效的狀態值"
+}</pre>
+          </div>
+        </div>
+      </div>
+
+      <!-- DELETE 成功 -->
+      <div class="bg-slate-900 rounded-xl border border-slate-800 p-5">
+        <div class="flex items-center gap-3 mb-3">
+          <span class="pass border text-xs font-bold px-2 py-0.5 rounded-full">PASS</span>
+          <span class="text-xs font-black text-red-400 mono bg-red-950 px-2 py-0.5 rounded">DELETE</span>
+          <code class="text-sm text-white mono">/api/submissions/:id</code>
+          <span class="text-slate-500 text-xs ml-auto">刪除存在的記錄</span>
+        </div>
+        <div class="grid md:grid-cols-2 gap-3">
+          <div>
+            <div class="text-xs text-slate-500 mb-1">Request</div>
+            <pre class="bg-slate-950 rounded-lg p-3 text-xs mono text-slate-300 overflow-x-auto">DELETE /api/submissions/1774600504831</pre>
+          </div>
+          <div>
+            <div class="text-xs text-slate-500 mb-1">Response <span class="text-green-400">HTTP 200</span></div>
+            <pre class="bg-slate-950 rounded-lg p-3 text-xs mono text-green-300 overflow-x-auto">{ "success": true }</pre>
+          </div>
+        </div>
+      </div>
+
+      <!-- DELETE 404 -->
+      <div class="bg-slate-900 rounded-xl border border-slate-800 p-5">
+        <div class="flex items-center gap-3 mb-3">
+          <span class="pass border text-xs font-bold px-2 py-0.5 rounded-full">PASS</span>
+          <span class="text-xs font-black text-red-400 mono bg-red-950 px-2 py-0.5 rounded">DELETE</span>
+          <code class="text-sm text-white mono">/api/submissions/:id</code>
+          <span class="text-slate-500 text-xs ml-auto">不存在的 ID → 應回 404</span>
+        </div>
+        <div class="grid md:grid-cols-2 gap-3">
+          <div>
+            <div class="text-xs text-slate-500 mb-1">Request</div>
+            <pre class="bg-slate-950 rounded-lg p-3 text-xs mono text-slate-300 overflow-x-auto">DELETE /api/submissions/9999999</pre>
+          </div>
+          <div>
+            <div class="text-xs text-slate-500 mb-1">Response <span class="text-amber-400">HTTP 404</span></div>
+            <pre class="bg-slate-950 rounded-lg p-3 text-xs mono text-amber-300 overflow-x-auto">{
+  "success": false,
+  "message": "記錄不存在"
+}</pre>
+          </div>
+        </div>
+      </div>
+
+      <!-- GET submissions -->
+      <div class="bg-slate-900 rounded-xl border border-slate-800 p-5">
+        <div class="flex items-center gap-3 mb-3">
+          <span class="pass border text-xs font-bold px-2 py-0.5 rounded-full">PASS</span>
+          <span class="text-xs font-black text-blue-400 mono bg-blue-950 px-2 py-0.5 rounded">GET</span>
+          <code class="text-sm text-white mono">/api/submissions</code>
+          <span class="text-slate-500 text-xs ml-auto">讀取全部記錄</span>
+        </div>
+        <div class="grid md:grid-cols-2 gap-3">
+          <div>
+            <div class="text-xs text-slate-500 mb-1">即時回傳（連線中）</div>
+            <div id="liveSubmissions" class="bg-slate-950 rounded-lg p-3 text-xs mono text-slate-400 min-h-[60px]">載入中...</div>
+          </div>
+          <div>
+            <div class="text-xs text-slate-500 mb-1">欄位說明</div>
+            <div class="bg-slate-950 rounded-lg p-3 text-xs mono text-slate-300 space-y-1">
+              <div><span class="text-blue-400">id</span>         — 時間戳記 ID</div>
+              <div><span class="text-blue-400">name</span>       — 負責人姓名</div>
+              <div><span class="text-blue-400">phone</span>      — 聯絡電話</div>
+              <div><span class="text-blue-400">lineId</span>     — Line ID</div>
+              <div><span class="text-blue-400">website</span>    — 官網網址</div>
+              <div><span class="text-blue-400">challenges</span> — 痛點陣列</div>
+              <div><span class="text-blue-400">notes</span>      — 補充說明</div>
+              <div><span class="text-blue-400">submittedAt</span>— ISO 時間</div>
+              <div><span class="text-blue-400">status</span>     — new/contacted/done</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Section 3: 即時 API 測試 -->
+  <section>
+    <h2 class="text-sm font-bold text-slate-400 uppercase tracking-widest mb-4 flex items-center gap-2">
+      <span class="material-symbols-outlined text-base">play_circle</span> 即時 API 測試
+      <span class="text-xs text-slate-600 normal-case tracking-normal font-normal">（在此頁直接送出）</span>
+    </h2>
+    <div class="bg-slate-900 rounded-2xl border border-slate-800 p-6">
+      <p class="text-slate-400 text-sm mb-4">填寫以下表單，測試 <code class="mono text-amber-400 text-xs">POST /api/contact</code> 是否正常儲存：</p>
+      <form id="testForm" class="space-y-4">
+        <div class="grid grid-cols-2 gap-4">
+          <div>
+            <label class="block text-xs text-slate-400 mb-1">姓名 *</label>
+            <input name="name" type="text" placeholder="測試姓名" class="w-full bg-slate-800 border border-slate-700 rounded-lg px-3 py-2 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-amber-500"/>
+          </div>
+          <div>
+            <label class="block text-xs text-slate-400 mb-1">電話 *</label>
+            <input name="phone" type="text" placeholder="0900-000-000" class="w-full bg-slate-800 border border-slate-700 rounded-lg px-3 py-2 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-amber-500"/>
+          </div>
+        </div>
+        <div class="grid grid-cols-2 gap-4">
+          <div>
+            <label class="block text-xs text-slate-400 mb-1">Line ID</label>
+            <input name="lineId" type="text" placeholder="@test" class="w-full bg-slate-800 border border-slate-700 rounded-lg px-3 py-2 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-amber-500"/>
+          </div>
+          <div>
+            <label class="block text-xs text-slate-400 mb-1">挑選痛點</label>
+            <select name="challenge" class="w-full bg-slate-800 border border-slate-700 rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-amber-500">
+              <option value="廣告費太貴">廣告費太貴</option>
+              <option value="Google 地圖搜不到">Google 地圖搜不到</option>
+              <option value="轉換率太低">轉換率太低</option>
+              <option value="測試用途">測試用途</option>
+            </select>
+          </div>
+        </div>
+        <div class="flex items-center gap-3">
+          <button type="submit" id="testBtn" class="bg-amber-700 hover:bg-amber-600 text-white font-semibold text-sm px-5 py-2 rounded-lg transition-colors flex items-center gap-2">
+            <span class="material-symbols-outlined text-base">send</span>
+            送出測試請求
+          </button>
+          <div id="testResult" class="text-sm mono"></div>
+        </div>
+      </form>
+      <div class="mt-4">
+        <div class="text-xs text-slate-500 mb-2">Raw Response：</div>
+        <pre id="testRaw" class="bg-slate-950 rounded-lg p-3 text-xs mono text-slate-400 min-h-[40px]">尚未送出</pre>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 4: 頁面快速導覽 -->
+  <section>
+    <h2 class="text-sm font-bold text-slate-400 uppercase tracking-widest mb-4 flex items-center gap-2">
+      <span class="material-symbols-outlined text-base">link</span> 快速導覽
+    </h2>
+    <div class="grid grid-cols-2 md:grid-cols-3 gap-3">
+      <a href="/" class="group bg-slate-900 border border-slate-800 hover:border-amber-700 rounded-xl p-4 transition-all">
+        <div class="text-amber-400 text-xs mono mb-2">localhost:3000/</div>
+        <div class="font-semibold text-white group-hover:text-amber-400 transition-colors text-sm">adlo 主站</div>
+        <div class="text-slate-500 text-xs mt-1">最終版 · 含表單</div>
+      </a>
+      <a href="/directory.html" class="group bg-slate-900 border border-slate-800 hover:border-amber-700 rounded-xl p-4 transition-all">
+        <div class="text-amber-400 text-xs mono mb-2">localhost:3000/directory.html</div>
+        <div class="font-semibold text-white group-hover:text-amber-400 transition-colors text-sm">頁面目錄</div>
+        <div class="text-slate-500 text-xs mt-1">統一入口</div>
+      </a>
+      <a href="/adlo-v1.html" class="group bg-slate-900 border border-slate-800 hover:border-slate-600 rounded-xl p-4 transition-all">
+        <div class="text-slate-400 text-xs mono mb-2">localhost:3000/adlo-v1.html</div>
+        <div class="font-semibold text-white group-hover:text-slate-300 transition-colors text-sm">adlo v1</div>
+        <div class="text-slate-500 text-xs mt-1">深色服務欄版本</div>
+      </a>
+      <a href="/geoboost.html" class="group bg-slate-900 border border-slate-800 hover:border-slate-600 rounded-xl p-4 transition-all">
+        <div class="text-slate-400 text-xs mono mb-2">localhost:3000/geoboost.html</div>
+        <div class="font-semibold text-white group-hover:text-slate-300 transition-colors text-sm">GeoBoost R.</div>
+        <div class="text-slate-500 text-xs mt-1">英文版接單流程</div>
+      </a>
+      <a href="/admin.html" class="group bg-slate-900 border border-slate-800 hover:border-blue-600 rounded-xl p-4 transition-all">
+        <div class="text-blue-400 text-xs mono mb-2">localhost:3000/admin.html</div>
+        <div class="font-semibold text-white group-hover:text-blue-400 transition-colors text-sm">管理後台</div>
+        <div class="text-slate-500 text-xs mt-1">申請記錄管理</div>
+      </a>
+      <a href="/test-report.html" class="group bg-slate-900 border border-amber-700/50 rounded-xl p-4 transition-all">
+        <div class="text-amber-400 text-xs mono mb-2">localhost:3000/test-report.html</div>
+        <div class="font-semibold text-amber-400 text-sm">測試報告</div>
+        <div class="text-slate-500 text-xs mt-1">← 目前所在頁面</div>
+      </a>
+    </div>
+  </section>
+
+</div>
+
+<!-- Footer -->
+<div class="border-t border-slate-800 py-6 text-center text-xs text-slate-600 mono">
+  adlo-project · node server.js · port 3000 · 本地端開發環境
+</div>
+
+<script>
+  // 時間
+  setInterval(() => {
+    document.getElementById('liveTime').textContent = new Date().toLocaleString('zh-TW');
+  }, 1000);
+
+  // 即時頁面狀態檢查
+  async function checkPages() {
+    const spans = document.querySelectorAll('[data-url]');
+    for (const span of spans) {
+      try {
+        const res = await fetch(span.dataset.url, { method: 'HEAD' });
+        span.className = 'live-pass text-xs mono';
+        span.textContent = `${res.status} ✓`;
+      } catch {
+        span.className = 'live-fail text-xs mono';
+        span.textContent = 'ERR ✗';
+      }
+    }
+  }
+
+  // 伺服器狀態 + GET submissions
+  async function checkAPI() {
+    try {
+      const res = await fetch('/api/submissions');
+      const data = await res.json();
+      document.getElementById('liveStatus').innerHTML = '<span class="text-green-400">ON</span>';
+      document.getElementById('liveStatusText').textContent = `HTTP ${res.status} · ${data.length} 筆`;
+      document.getElementById('liveStatusText').className = 'text-xs mt-1 text-green-400';
+
+      document.getElementById('liveSubmissions').textContent =
+        data.length === 0
+          ? '[] — 目前無記錄'
+          : JSON.stringify(data.slice(0, 2), null, 2) + (data.length > 2 ? `\n\n... 共 ${data.length} 筆` : '');
+    } catch {
+      document.getElementById('liveStatus').innerHTML = '<span class="text-red-400">OFF</span>';
+      document.getElementById('liveStatusText').textContent = '伺服器未啟動';
+      document.getElementById('liveStatusText').className = 'text-xs mt-1 text-red-400';
+      document.getElementById('liveSubmissions').textContent = '⚠ 無法連線';
+    }
+  }
+
+  // 即時測試表單
+  document.getElementById('testForm').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const btn = document.getElementById('testBtn');
+    const result = document.getElementById('testResult');
+    const raw = document.getElementById('testRaw');
+    btn.disabled = true;
+    btn.textContent = '送出中...';
+    result.textContent = '';
+
+    const form = e.target;
+    const payload = {
+      name: form.name.value.trim(),
+      phone: form.phone.value.trim(),
+      lineId: form.lineId.value.trim(),
+      challenges: [form.challenge.value],
+      notes: '來自測試報告頁'
+    };
+
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      });
+      const data = await res.json();
+      raw.textContent = JSON.stringify(data, null, 2);
+      if (data.success) {
+        result.innerHTML = `<span class="text-green-400">✓ 成功！ID: #${data.id}</span>`;
+        checkAPI();
+      } else {
+        result.innerHTML = `<span class="text-red-400">✗ ${data.message}</span>`;
+      }
+    } catch {
+      result.innerHTML = '<span class="text-red-400">✗ 網路錯誤</span>';
+      raw.textContent = 'fetch failed';
+    }
+
+    btn.disabled = false;
+    btn.innerHTML = '<span class="material-symbols-outlined text-base">send</span> 送出測試請求';
+  });
+
+  // 初始化
+  checkPages();
+  checkAPI();
+  setInterval(checkAPI, 15000);
+</script>
+</body>
+</html>

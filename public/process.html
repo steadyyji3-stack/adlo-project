@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="zh-TW" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>接單流程 — adlo 區域精準行銷</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Manrope:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,FILL@0..1&display=swap" rel="stylesheet" />
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script>
+    tailwind.config = {
+      theme: { extend: { colors: { accent: '#92400e', surface: '#f8fafc' }, fontFamily: { headline: ['Manrope','sans-serif'] } } }
+    }
+  </script>
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    .material-symbols-outlined { font-variation-settings: 'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24; vertical-align: middle; }
+    .cta-gradient { background: linear-gradient(135deg, #92400e 0%, #b45309 100%); }
+    .step-line { position: absolute; left: 35px; top: 64px; bottom: 0; width: 2px; background: linear-gradient(to bottom, #e2e8f0, transparent); }
+  </style>
+</head>
+<body class="bg-white text-slate-800">
+<script src="/js/nav.js"></script>
+
+<!-- Page Header -->
+<section class="pt-20 pb-16 px-6 md:px-8 bg-slate-50 border-b border-slate-100">
+  <div class="max-w-4xl mx-auto text-center">
+    <span class="inline-block px-4 py-1 rounded bg-amber-50 text-accent text-xs font-bold tracking-widest uppercase mb-5 border border-amber-100">HOW IT WORKS</span>
+    <h1 class="font-headline text-4xl md:text-5xl font-extrabold text-slate-800 mt-2 mb-4">接單流程</h1>
+    <p class="text-slate-500 text-lg">從諮詢到上線，清晰透明的 5 個步驟</p>
+  </div>
+</section>
+
+<!-- Steps -->
+<section class="py-20 px-6 md:px-8 bg-white">
+  <div class="max-w-3xl mx-auto">
+    <div class="space-y-0">
+
+      <div class="relative flex gap-8 pb-12">
+        <div class="step-line"></div>
+        <div class="w-[72px] flex-shrink-0 flex flex-col items-center">
+          <div class="w-[72px] h-[72px] rounded-full border-2 border-accent bg-white flex flex-col items-center justify-center shadow-md shadow-amber-900/10 z-10 relative">
+            <span class="text-xl font-extrabold text-slate-800 font-headline">1</span>
+            <i class="w-4 h-4 text-accent" data-lucide="message-square"></i>
+          </div>
+        </div>
+        <div class="pt-3 flex-1">
+          <div class="flex items-center gap-3 mb-2">
+            <h3 class="text-xl font-bold text-slate-800">填寫諮詢表單</h3>
+            <span class="text-xs text-slate-500 bg-slate-100 px-3 py-1 rounded-full">Day 0</span>
+          </div>
+          <p class="text-slate-500 text-sm leading-relaxed mb-3">告訴我們你的行業、區域、目前遇到的行銷困境，以及你最想解決的問題。表單只需 2 分鐘。</p>
+          <span class="inline-flex items-center gap-1.5 text-xs text-green-700 bg-green-50 border border-green-100 rounded-lg px-3 py-2">
+            <span class="material-symbols-outlined text-sm text-green-600">check_circle</span> 完全免費，無任何費用
+          </span>
+        </div>
+      </div>
+
+      <div class="relative flex gap-8 pb-12">
+        <div class="step-line"></div>
+        <div class="w-[72px] flex-shrink-0 flex flex-col items-center">
+          <div class="w-[72px] h-[72px] rounded-full border-2 border-accent bg-white flex flex-col items-center justify-center shadow-md shadow-amber-900/10 z-10 relative">
+            <span class="text-xl font-extrabold text-slate-800 font-headline">2</span>
+            <i class="w-4 h-4 text-accent" data-lucide="cpu"></i>
+          </div>
+        </div>
+        <div class="pt-3 flex-1">
+          <div class="flex items-center gap-3 mb-2">
+            <h3 class="text-xl font-bold text-slate-800">24h 內聯繫 + 免費評估</h3>
+            <span class="text-xs text-slate-500 bg-slate-100 px-3 py-1 rounded-full">Day 1</span>
+          </div>
+          <p class="text-slate-500 text-sm leading-relaxed mb-3">顧問 24 小時內透過電話或 LINE 聯繫，完成在地競爭環境免費分析，包含競爭對手現況、關鍵字機會、可預期成效。</p>
+          <span class="inline-flex items-center gap-1.5 text-xs text-blue-700 bg-blue-50 border border-blue-100 rounded-lg px-3 py-2">
+            <span class="material-symbols-outlined text-sm text-blue-600">description</span> 提供書面評估報告
+          </span>
+        </div>
+      </div>
+
+      <div class="relative flex gap-8 pb-12">
+        <div class="step-line"></div>
+        <div class="w-[72px] flex-shrink-0 flex flex-col items-center">
+          <div class="w-[72px] h-[72px] rounded-full border-2 border-accent bg-white flex flex-col items-center justify-center shadow-md shadow-amber-900/10 z-10 relative">
+            <span class="text-xl font-extrabold text-slate-800 font-headline">3</span>
+            <i class="w-4 h-4 text-accent" data-lucide="file-text"></i>
+          </div>
+        </div>
+        <div class="pt-3 flex-1">
+          <div class="flex items-center gap-3 mb-2">
+            <h3 class="text-xl font-bold text-slate-800">客製化方案提案</h3>
+            <span class="text-xs text-slate-500 bg-slate-100 px-3 py-1 rounded-full">Day 2–3</span>
+          </div>
+          <p class="text-slate-500 text-sm leading-relaxed mb-3">依據評估結果提供最適合的服務模組組合和報價。沒有套裝方案，每個案子都是量身訂做。</p>
+          <span class="inline-flex items-center gap-1.5 text-xs text-purple-700 bg-purple-50 border border-purple-100 rounded-lg px-3 py-2">
+            <span class="material-symbols-outlined text-sm text-purple-600">target</span> 沒有強迫成交壓力
+          </span>
+        </div>
+      </div>
+
+      <div class="relative flex gap-8 pb-12">
+        <div class="step-line"></div>
+        <div class="w-[72px] flex-shrink-0 flex flex-col items-center">
+          <div class="w-[72px] h-[72px] rounded-full border-2 border-accent bg-white flex flex-col items-center justify-center shadow-md shadow-amber-900/10 z-10 relative">
+            <span class="text-xl font-extrabold text-slate-800 font-headline">4</span>
+            <i class="w-4 h-4 text-accent" data-lucide="settings"></i>
+          </div>
+        </div>
+        <div class="pt-3 flex-1">
+          <div class="flex items-center gap-3 mb-2">
+            <h3 class="text-xl font-bold text-slate-800">簽約 + 48h 啟動</h3>
+            <span class="text-xs text-slate-500 bg-slate-100 px-3 py-1 rounded-full">Day 4–5</span>
+          </div>
+          <p class="text-slate-500 text-sm leading-relaxed mb-3">確認合作後，執行團隊 48 小時內啟動所有服務：GBP 資訊更新、SEO 技術健診、廣告帳戶建立，全部同步進行。</p>
+          <span class="inline-flex items-center gap-1.5 text-xs text-amber-700 bg-amber-50 border border-amber-100 rounded-lg px-3 py-2">
+            <span class="material-symbols-outlined text-sm text-amber-600">bolt</span> 業界最快啟動速度
+          </span>
+        </div>
+      </div>
+
+      <div class="relative flex gap-8">
+        <div class="w-[72px] flex-shrink-0 flex flex-col items-center">
+          <div class="w-[72px] h-[72px] rounded-full border-2 border-slate-800 bg-slate-800 flex flex-col items-center justify-center shadow-md shadow-slate-900/20 z-10 relative">
+            <span class="text-xl font-extrabold text-white font-headline">5</span>
+            <i class="w-4 h-4 text-amber-400" data-lucide="bar-chart-3"></i>
+          </div>
+        </div>
+        <div class="pt-3 flex-1">
+          <div class="flex items-center gap-3 mb-2">
+            <h3 class="text-xl font-bold text-slate-800">持續優化 + 月報</h3>
+            <span class="text-xs text-slate-500 bg-slate-100 px-3 py-1 rounded-full">每月持續</span>
+          </div>
+          <p class="text-slate-500 text-sm leading-relaxed mb-3">每月提供詳細成效報告，包含排名變化、流量數據、廣告成效。並根據數據持續優化策略，不斷提升投資回報率。</p>
+          <span class="inline-flex items-center gap-1.5 text-xs text-blue-700 bg-blue-50 border border-blue-100 rounded-lg px-3 py-2">
+            <span class="material-symbols-outlined text-sm text-blue-600">bar_chart</span> 數據透明，隨時可查
+          </span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Factory Excellence -->
+<section class="py-20 px-6 md:px-8 bg-slate-50 border-y border-slate-100">
+  <div class="max-w-5xl mx-auto">
+    <div class="text-center mb-12">
+      <h2 class="font-headline text-2xl md:text-3xl font-bold text-slate-800 mb-3">工廠級執行能力</h2>
+      <div class="w-16 h-0.5 bg-accent mx-auto mb-4"></div>
+      <p class="text-slate-500 text-sm">我們不是接案公司，我們是標準化流程的行銷工廠</p>
+    </div>
+    <div class="grid md:grid-cols-2 gap-5">
+      <div class="flex gap-4 items-start bg-white rounded-xl border border-slate-100 p-6">
+        <div class="w-12 h-12 bg-slate-50 rounded-xl flex items-center justify-center flex-shrink-0">
+          <i class="w-6 h-6 text-slate-700" data-lucide="factory"></i>
+        </div>
+        <div>
+          <h3 class="font-bold text-slate-800 mb-1">標準化 SOP</h3>
+          <p class="text-slate-500 text-sm leading-relaxed">每個服務模組都有完整的標準作業流程，品質不因人員異動而波動</p>
+        </div>
+      </div>
+      <div class="flex gap-4 items-start bg-white rounded-xl border border-slate-100 p-6">
+        <div class="w-12 h-12 bg-slate-50 rounded-xl flex items-center justify-center flex-shrink-0">
+          <i class="w-6 h-6 text-slate-700" data-lucide="globe"></i>
+        </div>
+        <div>
+          <h3 class="font-bold text-slate-800 mb-1">可擴展架構</h3>
+          <p class="text-slate-500 text-sm leading-relaxed">系統支援多案場同步管理，同時服務多個在地客戶不會互相干擾</p>
+        </div>
+      </div>
+      <div class="flex gap-4 items-start bg-white rounded-xl border border-slate-100 p-6">
+        <div class="w-12 h-12 bg-slate-50 rounded-xl flex items-center justify-center flex-shrink-0">
+          <i class="w-6 h-6 text-slate-700" data-lucide="database"></i>
+        </div>
+        <div>
+          <h3 class="font-bold text-slate-800 mb-1">數據驅動決策</h3>
+          <p class="text-slate-500 text-sm leading-relaxed">每個優化動作都有數據支撐，不靠感覺做行銷</p>
+        </div>
+      </div>
+      <div class="flex gap-4 items-start bg-white rounded-xl border border-slate-100 p-6">
+        <div class="w-12 h-12 bg-slate-50 rounded-xl flex items-center justify-center flex-shrink-0">
+          <i class="w-6 h-6 text-slate-700" data-lucide="shield"></i>
+        </div>
+        <div>
+          <h3 class="font-bold text-slate-800 mb-1">風險可控制</h3>
+          <p class="text-slate-500 text-sm leading-relaxed">所有策略皆符合 Google 官方規範，不使用黑帽技術，保護你的長期排名</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Guarantees -->
+<section class="py-20 px-6 md:px-8 bg-white">
+  <div class="max-w-5xl mx-auto">
+    <div class="text-center mb-12">
+      <h2 class="font-headline text-2xl md:text-3xl font-bold text-slate-800 mb-3">我們的承諾</h2>
+      <div class="w-16 h-0.5 bg-accent mx-auto"></div>
+    </div>
+    <div class="grid md:grid-cols-3 gap-5">
+      <div class="text-center bg-slate-50 border border-slate-100 rounded-xl p-8">
+        <div class="w-16 h-16 bg-white border border-slate-100 rounded-full flex items-center justify-center mx-auto mb-5 shadow-sm">
+          <i class="w-7 h-7 text-accent" data-lucide="lock"></i>
+        </div>
+        <h3 class="font-bold text-slate-800 mb-2">不鎖定長期合約</h3>
+        <p class="text-slate-500 text-sm leading-relaxed">按月計費，隨時可停，我們用成效留住你，不用合約綁住你</p>
+      </div>
+      <div class="text-center bg-slate-50 border border-slate-100 rounded-xl p-8">
+        <div class="w-16 h-16 bg-white border border-slate-100 rounded-full flex items-center justify-center mx-auto mb-5 shadow-sm">
+          <i class="w-7 h-7 text-accent" data-lucide="message-circle"></i>
+        </div>
+        <h3 class="font-bold text-slate-800 mb-2">LINE 即時溝通</h3>
+        <p class="text-slate-500 text-sm leading-relaxed">專屬 LINE 群組，有問題隨時問，工作日 2 小時內回覆</p>
+      </div>
+      <div class="text-center bg-slate-50 border border-slate-100 rounded-xl p-8">
+        <div class="w-16 h-16 bg-white border border-slate-100 rounded-full flex items-center justify-center mx-auto mb-5 shadow-sm">
+          <i class="w-7 h-7 text-accent" data-lucide="trending-up"></i>
+        </div>
+        <h3 class="font-bold text-slate-800 mb-2">90 天成效保證</h3>
+        <p class="text-slate-500 text-sm leading-relaxed">90 天內若關鍵字排名無明顯提升，退還當月服務費</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="py-24 px-6 md:px-8 bg-slate-50 text-center">
+  <div class="max-w-3xl mx-auto">
+    <h2 class="font-headline text-3xl font-bold text-slate-800 mb-4">準備好開始了嗎？</h2>
+    <p class="text-slate-500 mb-8 leading-relaxed">填寫諮詢表單，24 小時內我們會主動聯繫你</p>
+    <a href="/contact.html" class="inline-block cta-gradient text-white font-bold px-12 py-4 rounded-lg hover:brightness-110 transition-all shadow-lg shadow-amber-900/20">
+      立即填表諮詢 →
+    </a>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-slate-900 text-slate-400">
+  <div class="max-w-7xl mx-auto px-6 md:px-8 py-10">
+    <div class="flex flex-wrap justify-center gap-x-10 gap-y-3 text-sm mb-6">
+      <a href="/" class="hover:text-white transition-colors">首頁</a>
+      <a href="/services.html" class="hover:text-white transition-colors">服務方案</a>
+      <a href="/trends.html" class="hover:text-white transition-colors">趨勢分析</a>
+      <a href="/process.html" class="hover:text-white transition-colors">接單流程</a>
+      <a href="/contact.html" class="hover:text-white transition-colors">立即諮詢</a>
+    </div>
+    <p class="text-center text-xs text-slate-600">© 2026 adlo 區域精準行銷</p>
+  </div>
+</footer>
+
+<script>lucide.createIcons();</script>
+</body>
+</html>
