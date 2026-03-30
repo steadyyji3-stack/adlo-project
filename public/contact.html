@@ -7,6 +7,7 @@
   <script src="https://cdn.tailwindcss.com?plugins=forms"></script>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Manrope:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,FILL@0..1&display=swap" rel="stylesheet" />
+  <script src="https://unpkg.com/lucide@latest"></script>
   <script>
     tailwind.config = {
       theme: { extend: { colors: { accent: '#92400e', surface: '#f8fafc' }, fontFamily: { headline: ['Manrope','sans-serif'] } } }
@@ -77,42 +78,42 @@
 
       <!-- Left: Info Panel -->
       <div class="lg:col-span-2">
-        <div class="bg-slate-800 text-white rounded-2xl p-8 sticky top-24">
-          <h3 class="font-headline text-xl font-bold mb-2">準備好迎接新客流了嗎？</h3>
-          <p class="text-slate-300 text-sm leading-relaxed mb-8">填寫表單後，資深顧問會在 24 小時內進行初步的店面品牌健檢。</p>
+        <div class="bg-slate-50 border border-slate-100 rounded-2xl p-8 sticky top-24">
+          <h3 class="font-headline text-xl font-bold text-slate-800 mb-2">準備好迎接新客流了嗎？</h3>
+          <p class="text-slate-500 text-sm leading-relaxed mb-8">填寫表單後，資深顧問會在 24 小時內進行初步的店面品牌健檢。</p>
           <div class="space-y-5">
             <div class="flex items-start gap-3">
-              <span class="material-symbols-outlined text-accent text-xl mt-0.5">check_circle</span>
+              <i data-lucide="check-circle" class="w-5 h-5 text-accent flex-shrink-0 mt-0.5"></i>
               <div>
-                <div class="font-semibold text-sm">在地競爭環境分析</div>
+                <div class="font-semibold text-sm text-slate-800">在地競爭環境分析</div>
                 <div class="text-slate-400 text-xs mt-0.5">你的競爭對手目前在做什麼</div>
               </div>
             </div>
             <div class="flex items-start gap-3">
-              <span class="material-symbols-outlined text-accent text-xl mt-0.5">check_circle</span>
+              <i data-lucide="check-circle" class="w-5 h-5 text-accent flex-shrink-0 mt-0.5"></i>
               <div>
-                <div class="font-semibold text-sm">免費 Local SEO 排名分析</div>
+                <div class="font-semibold text-sm text-slate-800">免費 Local SEO 排名分析</div>
                 <div class="text-slate-400 text-xs mt-0.5">找出最值得搶的搜尋字</div>
               </div>
             </div>
             <div class="flex items-start gap-3">
-              <span class="material-symbols-outlined text-accent text-xl mt-0.5">check_circle</span>
+              <i data-lucide="check-circle" class="w-5 h-5 text-accent flex-shrink-0 mt-0.5"></i>
               <div>
-                <div class="font-semibold text-sm">客製化方案建議</div>
+                <div class="font-semibold text-sm text-slate-800">客製化方案建議</div>
                 <div class="text-slate-400 text-xs mt-0.5">最適合你預算的服務組合</div>
               </div>
             </div>
             <div class="flex items-start gap-3">
-              <span class="material-symbols-outlined text-accent text-xl mt-0.5">check_circle</span>
+              <i data-lucide="check-circle" class="w-5 h-5 text-accent flex-shrink-0 mt-0.5"></i>
               <div>
-                <div class="font-semibold text-sm">競品廣告投放策略解析</div>
+                <div class="font-semibold text-sm text-slate-800">競品廣告投放策略解析</div>
                 <div class="text-slate-400 text-xs mt-0.5">諮詢後沒有強迫成交</div>
               </div>
             </div>
           </div>
-          <div class="mt-8 pt-6 border-t border-slate-700 flex items-center gap-2">
+          <div class="mt-8 pt-6 border-t border-slate-200 flex items-center gap-2">
             <span class="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span>
-            <span class="text-sm font-semibold">本月限量 5 個諮詢名額</span>
+            <span class="text-sm font-semibold text-slate-700">本月限量 5 個諮詢名額</span>
           </div>
         </div>
       </div>
@@ -272,6 +273,7 @@ document.getElementById('contact-form').addEventListener('submit', async functio
   }
 });
 </script>
+<script>lucide.createIcons();</script>
 
 </body>
 </html>

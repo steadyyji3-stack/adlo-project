@@ -7,6 +7,7 @@
   <script src="https://cdn.tailwindcss.com?plugins=forms"></script>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Manrope:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,FILL@0..1&display=swap" rel="stylesheet" />
+  <script src="https://unpkg.com/lucide@latest"></script>
   <script>
     tailwind.config = {
       theme: { extend: { colors: { accent: '#92400e', 'accent-light': '#b45309', surface: '#f8fafc' }, fontFamily: { headline: ['Manrope','sans-serif'], body: ['Inter','sans-serif'] } } }
@@ -42,7 +43,7 @@
     <div class="grid md:grid-cols-2 gap-5">
       <div class="flex gap-4 items-start bg-slate-50 rounded-xl p-6 border border-slate-100 card-hover">
         <div class="w-12 h-12 bg-red-50 rounded-lg flex items-center justify-center flex-shrink-0">
-          <span class="material-symbols-outlined text-red-400">sentiment_dissatisfied</span>
+          <i data-lucide="frown" class="w-6 h-6 text-red-400"></i>
         </div>
         <div>
           <h3 class="font-bold text-slate-800 mb-1">花了錢在廣告，卻沒有詢問電話</h3>
@@ -51,7 +52,7 @@
       </div>
       <div class="flex gap-4 items-start bg-slate-50 rounded-xl p-6 border border-slate-100 card-hover">
         <div class="w-12 h-12 bg-red-50 rounded-lg flex items-center justify-center flex-shrink-0">
-          <span class="material-symbols-outlined text-red-400">trending_down</span>
+          <i data-lucide="trending-down" class="w-6 h-6 text-red-400"></i>
         </div>
         <div>
           <h3 class="font-bold text-slate-800 mb-1">競爭對手出現在 Google 地圖第一名</h3>
@@ -60,7 +61,7 @@
       </div>
       <div class="flex gap-4 items-start bg-slate-50 rounded-xl p-6 border border-slate-100 card-hover">
         <div class="w-12 h-12 bg-red-50 rounded-lg flex items-center justify-center flex-shrink-0">
-          <span class="material-symbols-outlined text-red-400">help_outline</span>
+          <i data-lucide="help-circle" class="w-6 h-6 text-red-400"></i>
         </div>
         <div>
           <h3 class="font-bold text-slate-800 mb-1">不知道從哪裡開始做行銷</h3>
@@ -69,7 +70,7 @@
       </div>
       <div class="flex gap-4 items-start bg-slate-50 rounded-xl p-6 border border-slate-100 card-hover">
         <div class="w-12 h-12 bg-red-50 rounded-lg flex items-center justify-center flex-shrink-0">
-          <span class="material-symbols-outlined text-red-400">schedule</span>
+          <i data-lucide="clock" class="w-6 h-6 text-red-400"></i>
         </div>
         <div>
           <h3 class="font-bold text-slate-800 mb-1">沒有時間親自管行銷</h3>
@@ -93,61 +94,61 @@
 
       <div id="gbp" class="card-hover bg-white rounded-xl border border-slate-100 p-8 scroll-mt-20 group">
         <div class="w-14 h-14 bg-slate-50 rounded-xl flex items-center justify-center mb-5 group-hover:bg-slate-800 transition-colors">
-          <span class="material-symbols-outlined text-slate-700 group-hover:text-white transition-colors">location_on</span>
+          <i data-lucide="map-pin" class="w-6 h-6 text-slate-700 group-hover:text-white transition-colors"></i>
         </div>
         <span class="text-accent text-xs font-bold tracking-widest">MODULE 01</span>
         <h3 class="text-xl font-bold text-slate-800 mt-2 mb-3">Google 商家檔案優化</h3>
         <p class="text-slate-500 text-sm leading-relaxed mb-5">讓你的商家出現在搜尋結果的「地圖三包廂」。包含商家資訊完整建置、關鍵字植入、相片策略與評論管理。</p>
         <ul class="space-y-2 text-sm text-slate-500">
-          <li class="flex items-center gap-2"><span class="material-symbols-outlined text-sm text-green-500">check_circle</span>GBP 完整建置 / 修復</li>
-          <li class="flex items-center gap-2"><span class="material-symbols-outlined text-sm text-green-500">check_circle</span>關鍵字研究 + 植入</li>
-          <li class="flex items-center gap-2"><span class="material-symbols-outlined text-sm text-green-500">check_circle</span>每月 8 篇貼文維護</li>
-          <li class="flex items-center gap-2"><span class="material-symbols-outlined text-sm text-green-500">check_circle</span>5 星評論引導策略</li>
+          <li class="flex items-center gap-2"><i data-lucide="check-circle" class="w-4 h-4 text-green-500 flex-shrink-0"></i>GBP 完整建置 / 修復</li>
+          <li class="flex items-center gap-2"><i data-lucide="check-circle" class="w-4 h-4 text-green-500 flex-shrink-0"></i>關鍵字研究 + 植入</li>
+          <li class="flex items-center gap-2"><i data-lucide="check-circle" class="w-4 h-4 text-green-500 flex-shrink-0"></i>每月 8 篇貼文維護</li>
+          <li class="flex items-center gap-2"><i data-lucide="check-circle" class="w-4 h-4 text-green-500 flex-shrink-0"></i>5 星評論引導策略</li>
         </ul>
       </div>
 
       <div id="seo" class="card-hover bg-white rounded-xl border border-slate-100 p-8 scroll-mt-20 group">
         <div class="w-14 h-14 bg-slate-50 rounded-xl flex items-center justify-center mb-5 group-hover:bg-slate-800 transition-colors">
-          <span class="material-symbols-outlined text-slate-700 group-hover:text-white transition-colors">search</span>
+          <i data-lucide="search" class="w-6 h-6 text-slate-700 group-hover:text-white transition-colors"></i>
         </div>
         <span class="text-accent text-xs font-bold tracking-widest">MODULE 02</span>
         <h3 class="text-xl font-bold text-slate-800 mt-2 mb-3">在地 SEO 深度佈局</h3>
         <p class="text-slate-500 text-sm leading-relaxed mb-5">針對「[城市/區域]+[行業關鍵字]」做深度優化，讓你的網站穩定排名在搜尋結果第一頁。</p>
         <ul class="space-y-2 text-sm text-slate-500">
-          <li class="flex items-center gap-2"><span class="material-symbols-outlined text-sm text-green-500">check_circle</span>在地關鍵字地圖建立</li>
-          <li class="flex items-center gap-2"><span class="material-symbols-outlined text-sm text-green-500">check_circle</span>網站技術 SEO 健診</li>
-          <li class="flex items-center gap-2"><span class="material-symbols-outlined text-sm text-green-500">check_circle</span>外部連結建立 (Link Building)</li>
-          <li class="flex items-center gap-2"><span class="material-symbols-outlined text-sm text-green-500">check_circle</span>每月排名追蹤報告</li>
+          <li class="flex items-center gap-2"><i data-lucide="check-circle" class="w-4 h-4 text-green-500 flex-shrink-0"></i>在地關鍵字地圖建立</li>
+          <li class="flex items-center gap-2"><i data-lucide="check-circle" class="w-4 h-4 text-green-500 flex-shrink-0"></i>網站技術 SEO 健診</li>
+          <li class="flex items-center gap-2"><i data-lucide="check-circle" class="w-4 h-4 text-green-500 flex-shrink-0"></i>外部連結建立 (Link Building)</li>
+          <li class="flex items-center gap-2"><i data-lucide="check-circle" class="w-4 h-4 text-green-500 flex-shrink-0"></i>每月排名追蹤報告</li>
         </ul>
       </div>
 
       <div id="content" class="card-hover bg-white rounded-xl border border-slate-100 p-8 scroll-mt-20 group">
         <div class="w-14 h-14 bg-slate-50 rounded-xl flex items-center justify-center mb-5 group-hover:bg-slate-800 transition-colors">
-          <span class="material-symbols-outlined text-slate-700 group-hover:text-white transition-colors">edit_note</span>
+          <i data-lucide="pen-line" class="w-6 h-6 text-slate-700 group-hover:text-white transition-colors"></i>
         </div>
         <span class="text-accent text-xs font-bold tracking-widest">MODULE 03</span>
         <h3 class="text-xl font-bold text-slate-800 mt-2 mb-3">在地內容行銷</h3>
         <p class="text-slate-500 text-sm leading-relaxed mb-5">透過精準的在地化文章吸引搜尋流量，搭配 Facebook / Instagram 社群貼文，建立品牌在地信任感。</p>
         <ul class="space-y-2 text-sm text-slate-500">
-          <li class="flex items-center gap-2"><span class="material-symbols-outlined text-sm text-green-500">check_circle</span>每月 4 篇 SEO 文章</li>
-          <li class="flex items-center gap-2"><span class="material-symbols-outlined text-sm text-green-500">check_circle</span>每月 12 篇社群貼文</li>
-          <li class="flex items-center gap-2"><span class="material-symbols-outlined text-sm text-green-500">check_circle</span>Canva 視覺設計</li>
-          <li class="flex items-center gap-2"><span class="material-symbols-outlined text-sm text-green-500">check_circle</span>在地事件/節慶文案</li>
+          <li class="flex items-center gap-2"><i data-lucide="check-circle" class="w-4 h-4 text-green-500 flex-shrink-0"></i>每月 4 篇 SEO 文章</li>
+          <li class="flex items-center gap-2"><i data-lucide="check-circle" class="w-4 h-4 text-green-500 flex-shrink-0"></i>每月 12 篇社群貼文</li>
+          <li class="flex items-center gap-2"><i data-lucide="check-circle" class="w-4 h-4 text-green-500 flex-shrink-0"></i>Canva 視覺設計</li>
+          <li class="flex items-center gap-2"><i data-lucide="check-circle" class="w-4 h-4 text-green-500 flex-shrink-0"></i>在地事件/節慶文案</li>
         </ul>
       </div>
 
       <div id="ads" class="card-hover bg-white rounded-xl border border-slate-100 p-8 scroll-mt-20 group">
         <div class="w-14 h-14 bg-slate-50 rounded-xl flex items-center justify-center mb-5 group-hover:bg-slate-800 transition-colors">
-          <span class="material-symbols-outlined text-slate-700 group-hover:text-white transition-colors">ads_click</span>
+          <i data-lucide="mouse-pointer-click" class="w-6 h-6 text-slate-700 group-hover:text-white transition-colors"></i>
         </div>
         <span class="text-accent text-xs font-bold tracking-widest">MODULE 04</span>
         <h3 class="text-xl font-bold text-slate-800 mt-2 mb-3">精準廣告投放</h3>
         <p class="text-slate-500 text-sm leading-relaxed mb-5">Google 關鍵字廣告 + Meta 地理範圍廣告，只向方圓 5 公里內的潛在客戶展示，最大化廣告效益。</p>
         <ul class="space-y-2 text-sm text-slate-500">
-          <li class="flex items-center gap-2"><span class="material-symbols-outlined text-sm text-green-500">check_circle</span>Google Ads 帳戶架設</li>
-          <li class="flex items-center gap-2"><span class="material-symbols-outlined text-sm text-green-500">check_circle</span>地理圍欄廣告設定</li>
-          <li class="flex items-center gap-2"><span class="material-symbols-outlined text-sm text-green-500">check_circle</span>A/B 廣告素材測試</li>
-          <li class="flex items-center gap-2"><span class="material-symbols-outlined text-sm text-green-500">check_circle</span>每週成效報告</li>
+          <li class="flex items-center gap-2"><i data-lucide="check-circle" class="w-4 h-4 text-green-500 flex-shrink-0"></i>Google Ads 帳戶架設</li>
+          <li class="flex items-center gap-2"><i data-lucide="check-circle" class="w-4 h-4 text-green-500 flex-shrink-0"></i>地理圍欄廣告設定</li>
+          <li class="flex items-center gap-2"><i data-lucide="check-circle" class="w-4 h-4 text-green-500 flex-shrink-0"></i>A/B 廣告素材測試</li>
+          <li class="flex items-center gap-2"><i data-lucide="check-circle" class="w-4 h-4 text-green-500 flex-shrink-0"></i>每週成效報告</li>
         </ul>
       </div>
 
@@ -210,5 +211,6 @@
   </div>
 </footer>
 
+<script>lucide.createIcons();</script>
 </body>
 </html>

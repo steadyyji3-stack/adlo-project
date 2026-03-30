@@ -7,6 +7,7 @@
   <script src="https://cdn.tailwindcss.com?plugins=forms"></script>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Manrope:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,FILL@0..1&display=swap" rel="stylesheet" />
+  <script src="https://unpkg.com/lucide@latest"></script>
   <script>
     tailwind.config = {
       theme: {
@@ -80,7 +81,7 @@
         </div>
         <div class="mt-8 pt-8 border-t border-slate-50 flex items-center gap-4 bg-slate-50 rounded-xl p-5">
           <div class="w-12 h-12 bg-accent rounded-lg flex items-center justify-center flex-shrink-0">
-            <span class="material-symbols-outlined text-white text-xl">trending_up</span>
+            <i data-lucide="trending-up" class="w-5 h-5 text-white"></i>
           </div>
           <div>
             <div class="text-slate-800 font-bold">+142% 門店預約率</div>
@@ -105,28 +106,28 @@
     <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
       <a href="/services.html#gbp" class="card-hover bg-white rounded-xl border border-slate-100 p-7 block group">
         <div class="w-12 h-12 bg-slate-50 rounded-lg flex items-center justify-center mb-5 group-hover:bg-slate-800 transition-colors">
-          <span class="material-symbols-outlined text-slate-700 group-hover:text-white transition-colors">location_on</span>
+          <i data-lucide="map-pin" class="w-5 h-5 text-slate-700 group-hover:text-white transition-colors"></i>
         </div>
         <h3 class="text-slate-800 font-bold text-lg mb-2">Google 商家優化</h3>
         <p class="text-slate-500 text-sm leading-relaxed">讓你的店家出現在地圖三包廂，關鍵字首位曝光</p>
       </a>
       <a href="/services.html#seo" class="card-hover bg-white rounded-xl border border-slate-100 p-7 block group">
         <div class="w-12 h-12 bg-slate-50 rounded-lg flex items-center justify-center mb-5 group-hover:bg-slate-800 transition-colors">
-          <span class="material-symbols-outlined text-slate-700 group-hover:text-white transition-colors">search</span>
+          <i data-lucide="search" class="w-5 h-5 text-slate-700 group-hover:text-white transition-colors"></i>
         </div>
         <h3 class="text-slate-800 font-bold text-lg mb-2">在地 SEO 佈局</h3>
         <p class="text-slate-500 text-sm leading-relaxed">針對「[地區]+[行業]」關鍵字做深度優化</p>
       </a>
       <a href="/services.html#content" class="card-hover bg-white rounded-xl border border-slate-100 p-7 block group">
         <div class="w-12 h-12 bg-slate-50 rounded-lg flex items-center justify-center mb-5 group-hover:bg-slate-800 transition-colors">
-          <span class="material-symbols-outlined text-slate-700 group-hover:text-white transition-colors">edit_note</span>
+          <i data-lucide="pen-line" class="w-5 h-5 text-slate-700 group-hover:text-white transition-colors"></i>
         </div>
         <h3 class="text-slate-800 font-bold text-lg mb-2">內容行銷</h3>
         <p class="text-slate-500 text-sm leading-relaxed">吸引搜尋流量的在地化文章與社群貼文</p>
       </a>
       <a href="/services.html#ads" class="card-hover bg-white rounded-xl border border-slate-100 p-7 block group">
         <div class="w-12 h-12 bg-slate-50 rounded-lg flex items-center justify-center mb-5 group-hover:bg-slate-800 transition-colors">
-          <span class="material-symbols-outlined text-slate-700 group-hover:text-white transition-colors">ads_click</span>
+          <i data-lucide="mouse-pointer-click" class="w-5 h-5 text-slate-700 group-hover:text-white transition-colors"></i>
         </div>
         <h3 class="text-slate-800 font-bold text-lg mb-2">精準廣告投放</h3>
         <p class="text-slate-500 text-sm leading-relaxed">Google Ads + Meta 廣告，只打方圓 5 公里的潛在客</p>
@@ -141,15 +142,15 @@
 <!-- Trends Teaser -->
 <section class="py-24 bg-white">
   <div class="max-w-7xl mx-auto px-6 md:px-8">
-    <div class="bg-slate-800 rounded-2xl p-12 md:p-16 flex flex-col md:flex-row items-center gap-10">
+    <div class="bg-amber-50 border border-amber-100 rounded-2xl p-12 md:p-16 flex flex-col md:flex-row items-center gap-10">
       <div class="flex-1">
-        <span class="inline-block text-xs font-bold tracking-widest text-amber-400 uppercase mb-4">MARKET INTELLIGENCE</span>
-        <h2 class="font-headline text-3xl md:text-4xl font-bold text-white mb-4">台灣在地搜尋趨勢</h2>
-        <p class="text-slate-400 leading-relaxed max-w-lg">
+        <span class="inline-block text-xs font-bold tracking-widest text-accent uppercase mb-4">MARKET INTELLIGENCE</span>
+        <h2 class="font-headline text-3xl md:text-4xl font-bold text-slate-800 mb-4">台灣在地搜尋趨勢</h2>
+        <p class="text-slate-500 leading-relaxed max-w-lg">
           即時追蹤「附近餐廳」、「到府服務」等關鍵字熱度，找到你的行銷切入點。數據由 Google Trends 提供。
         </p>
       </div>
-      <a href="/trends.html" class="flex-shrink-0 bg-amber-600 hover:bg-amber-500 text-white font-bold px-8 py-4 rounded-lg transition-colors shadow-lg">
+      <a href="/trends.html" class="flex-shrink-0 cta-gradient text-white font-bold px-8 py-4 rounded-lg hover:brightness-110 transition-all shadow-lg shadow-amber-900/20">
         查看趨勢儀表板 →
       </a>
     </div>
@@ -166,21 +167,21 @@
     <div class="grid md:grid-cols-3 gap-6">
       <div class="card-hover bg-white p-10 rounded-xl border border-slate-100 group">
         <div class="w-14 h-14 bg-slate-50 rounded-lg flex items-center justify-center mb-6 group-hover:bg-slate-800 transition-colors">
-          <span class="material-symbols-outlined text-slate-700 group-hover:text-white transition-colors">trending_down</span>
+          <i data-lucide="trending-down" class="w-5 h-5 text-slate-700 group-hover:text-white transition-colors"></i>
         </div>
         <h3 class="text-xl font-bold text-slate-800 mb-3">廣告費越燒越貴</h3>
         <p class="text-slate-500 leading-relaxed text-sm">花了大把廣告費，帶進的是點擊而不是實際客流，投資回報率不斷下滑。</p>
       </div>
       <div class="card-hover bg-white p-10 rounded-xl border border-slate-100 group">
         <div class="w-14 h-14 bg-slate-50 rounded-lg flex items-center justify-center mb-6 group-hover:bg-slate-800 transition-colors">
-          <span class="material-symbols-outlined text-slate-700 group-hover:text-white transition-colors">location_off</span>
+          <i data-lucide="map-pin-off" class="w-5 h-5 text-slate-700 group-hover:text-white transition-colors"></i>
         </div>
         <h3 class="text-xl font-bold text-slate-800 mb-3">競爭對手搶走排名</h3>
         <p class="text-slate-500 leading-relaxed text-sm">客戶在附近搜尋，卻找到競爭對手。你的店面在 Google 地圖上被徹底隱形。</p>
       </div>
       <div class="card-hover bg-white p-10 rounded-xl border border-slate-100 group">
         <div class="w-14 h-14 bg-slate-50 rounded-lg flex items-center justify-center mb-6 group-hover:bg-slate-800 transition-colors">
-          <span class="material-symbols-outlined text-slate-700 group-hover:text-white transition-colors">query_stats</span>
+          <i data-lucide="bar-chart-2" class="w-5 h-5 text-slate-700 group-hover:text-white transition-colors"></i>
         </div>
         <h3 class="text-xl font-bold text-slate-800 mb-3">不知道從哪裡開始</h3>
         <p class="text-slate-500 leading-relaxed text-sm">SEO、社群、廣告，每個人說的都不同，卻沒有一套整合方案為你量身設計。</p>
@@ -223,5 +224,6 @@
   </div>
 </footer>
 
+<script>lucide.createIcons();</script>
 </body>
 </html>
